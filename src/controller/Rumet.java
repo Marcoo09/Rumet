@@ -1,5 +1,4 @@
-package rumet;
-
+package controller;
 /**
  * @author Marco Fiorito
  */
