@@ -11,7 +11,8 @@ public class Model {
     private ArrayList<Plate> listOfPlates;
     private ArrayList<Order> listOfOrders;
     private ArrayList<Client> listOfClients;
-    
+    private ArrayList<Table> listOfTables;
+
     public void addDrink(Drink parmDrink) {
         this.getListOfDrinks().add(parmDrink);
     }
@@ -27,7 +28,11 @@ public class Model {
     public void addClient(Client parmClient) {
         this.getListOfClients().add(parmClient);
     }
-
+    
+    public void addTable(Table parmTable) {
+        this.getListOfTables().add(parmTable);
+    }
+    
     public ArrayList<Drink> getListOfDrinks() {
         return listOfDrinks;
     }
@@ -41,6 +46,10 @@ public class Model {
     }
     public ArrayList<Client> getListOfClients() {
         return listOfClients;
+    }
+
+    public ArrayList<Table> getListOfTables() {
+        return listOfTables;
     }
     
 }

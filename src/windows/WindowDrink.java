@@ -2,6 +2,7 @@ package windows;
 
 import domain.Drink;
 import domain.Model;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 /**
@@ -14,6 +15,8 @@ public class WindowDrink extends javax.swing.JFrame {
     public WindowDrink(Model model) {
         Model = model;
         initComponents();
+        this.setExtendedState(JFrame.MAXIMIZED_BOTH);
+
     }
 
     @SuppressWarnings("unchecked")

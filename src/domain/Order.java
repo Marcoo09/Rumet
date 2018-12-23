@@ -12,11 +12,13 @@ public class Order {
     private Date date;
     private float discount;
     private float total;
-
-    public Order(ArrayList<Plate> listOfPlates, ArrayList<Drink> listOfDrinks, float discount) {
+    private Table table;
+    
+    public Order(ArrayList<Plate> listOfPlates, ArrayList<Drink> listOfDrinks, float discount, Table t) {
         this.listOfPlates = listOfPlates;
         this.listOfDrinks = listOfDrinks;
         this.discount = discount;
+        this.table = t;
     }
 
     public ArrayList<Plate> getListOfPlates() {
