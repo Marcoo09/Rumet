@@ -4,9 +4,9 @@ package domain;
  */
 public class Client {
     private String name;
-    private int rut;
+    private String  rut;
 
-    public Client(String name, int rut) {
+    public Client(String name,String rut) {
         this.name = name;
         this.rut = rut;
     }
@@ -19,11 +19,11 @@ public class Client {
         this.name = name;
     }
 
-    public int getRut() {
+    public String getRut() {
         return rut;
     }
 
-    public void setRut(int rut) {
+    public void setRut(String rut) {
         this.rut = rut;
     }
     

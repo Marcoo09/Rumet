@@ -9,8 +9,9 @@ public class Model {
 
     private ArrayList<Drink> listOfDrinks;
     private ArrayList<Plate> listOfPlates;
-    private ArrayList<Order> ListOfOrders;
-
+    private ArrayList<Order> listOfOrders;
+    private ArrayList<Client> listOfClients;
+    
     public void addDrink(Drink parmDrink) {
         this.getListOfDrinks().add(parmDrink);
     }
@@ -22,6 +23,10 @@ public class Model {
     public void addOrder(Order parmOrder) {
         this.getListOfOrders().add(parmOrder);
     }
+    
+    public void addClient(Client parmClient) {
+        this.getListOfClients().add(parmClient);
+    }
 
     public ArrayList<Drink> getListOfDrinks() {
         return listOfDrinks;
@@ -32,7 +37,10 @@ public class Model {
     }
 
     public ArrayList<Order> getListOfOrders() {
-        return ListOfOrders;
+        return listOfOrders;
     }
-
+    public ArrayList<Client> getListOfClients() {
+        return listOfClients;
+    }
+    
 }
