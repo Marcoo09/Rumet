@@ -61,6 +61,7 @@ public class WindowOrder extends javax.swing.JFrame {
         lblTable = new javax.swing.JLabel();
         cbxTables = new javax.swing.JComboBox<>();
         btnAddOrder = new javax.swing.JButton();
+        btnBack = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -72,7 +73,7 @@ public class WindowOrder extends javax.swing.JFrame {
         getContentPane().add(lblOrderPlates, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 10, -1, -1));
 
         lblOrderDrink.setText("Bebidas pedidas");
-        getContentPane().add(lblOrderDrink, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 10, -1, -1));
+        getContentPane().add(lblOrderDrink, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 10, -1, -1));
 
         lblDrink.setText("Bebidas");
         getContentPane().add(lblDrink, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 10, -1, -1));
@@ -159,6 +160,14 @@ public class WindowOrder extends javax.swing.JFrame {
         });
         getContentPane().add(btnAddOrder, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 230, -1, -1));
 
+        btnBack.setText("Back");
+        btnBack.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBackActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 20, -1, -1));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -200,8 +209,15 @@ public class WindowOrder extends javax.swing.JFrame {
 
     }//GEN-LAST:event_btnAddOrderActionPerformed
 
+    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
+        WindowMain wMain = new WindowMain(model);
+        wMain.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnBackActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAddOrder;
+    private javax.swing.JButton btnBack;
     private javax.swing.JButton btnDrinkLeft;
     private javax.swing.JButton btnDrinkRight;
     private javax.swing.JButton btnPlatesLeft;
