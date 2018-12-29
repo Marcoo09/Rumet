@@ -101,6 +101,7 @@ public class WindowTable extends javax.swing.JFrame {
                         model.addTable(table);
                         init++;
                     }
+                    JOptionPane.showMessageDialog(this, "Las mesas fueron agregadas correctamente","", JOptionPane.INFORMATION_MESSAGE);
                 }else{
                     JOptionPane.showMessageDialog(this, "Error","Rango inválido", JOptionPane.ERROR_MESSAGE);
                 }
@@ -111,7 +112,7 @@ public class WindowTable extends javax.swing.JFrame {
     }//GEN-LAST:event_btnAddActionPerformed
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
-        WindowMain wMain = new WindowMain(model);
+        WindowMain wMain = new WindowMain(model, "");
         wMain.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnBackActionPerformed

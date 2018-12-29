@@ -76,11 +76,10 @@ public class WindowClient extends javax.swing.JFrame {
         Client client = new Client(name, rut);
         model.addClient(client);
         JOptionPane.showMessageDialog(this,"", "El plato fue agregado correctamente", 0);
-        return;
     }//GEN-LAST:event_btnAddDrinkActionPerformed
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
-        WindowMain wMain = new WindowMain(model);
+        WindowMain wMain = new WindowMain(model, "");
         wMain.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnBackActionPerformed

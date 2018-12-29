@@ -1,9 +1,12 @@
 package domain;
 
+import java.io.Serializable;
+
 /**
  * @author Marco Fiorito
  */
-public class Table implements Comparable<Table>{
+public class Table implements Comparable<Table>, Serializable{
+
     private int number;
 
     public Table(int n) {

@@ -1,8 +1,11 @@
 package domain;
+
+import java.io.Serializable;
+
 /**
  * @author Marco Fiorito
  */
-public class Client {
+public class Client implements Serializable{
     private String name;
     private String  rut;
 
@@ -26,5 +29,11 @@ public class Client {
     public void setRut(String rut) {
         this.rut = rut;
     }
+
+    @Override
+    public String toString() {
+        return name;
+    }
+    
     
 }

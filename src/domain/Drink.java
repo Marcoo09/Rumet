@@ -1,4 +1,5 @@
 package domain;
+
 /**
  * @author Marco Fiorito
  */

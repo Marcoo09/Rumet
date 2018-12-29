@@ -9,14 +9,14 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
-import windows.WindowMain;
+import windows.login.WindowLogin;
 
 /**
  * @author Marco Fiorito
  */
 public class Rumet {
 
-    public static void main(String[] args) throws FileNotFoundException, IOException, ClassNotFoundException, InstantiationException, IllegalAccessException, UnsupportedLookAndFeelException {
+    public static void main(String[] args) throws FileNotFoundException, ClassNotFoundException, InstantiationException, IllegalAccessException, UnsupportedLookAndFeelException, IOException {
         Model model = new Model();
         
         UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
@@ -30,8 +30,8 @@ public class Rumet {
                 ObjectInputStream input = new ObjectInputStream(buffer);
                 model =(Model)(input.readObject());
         }       
-        WindowMain main = new WindowMain(model);
-        main.setVisible(true);
+        WindowLogin login = new WindowLogin(model);
+        login.setVisible(true);
     }
     
 }

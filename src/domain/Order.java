@@ -1,12 +1,14 @@
 package domain;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 
 /**
  * @author Marco Fiorito
  */
-public class Order {
+public class Order implements Serializable{
+    
     private ArrayList<Plate> listOfPlates;
     private ArrayList<Drink> listOfDrinks;
     private Date date;
@@ -60,5 +62,11 @@ public class Order {
     public void setTotal(float total) {
         this.total = total;
     }
+
+    @Override
+    public String toString() {
+        return "Pedido: " + " Total " + total + ", Mesa " + table;
+    }
+    
     
 }

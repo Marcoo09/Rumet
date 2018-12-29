@@ -66,15 +66,14 @@ public class WindowPlate extends javax.swing.JFrame {
             int cost = Integer.parseInt( txtCost.getText());
             Plate plate = new Plate(cost, description);
             model.addPlate(plate);
-            JOptionPane.showMessageDialog(this,"", "El plato fue agregado correctamente", 0);
-            return;
+            JOptionPane.showMessageDialog(this,"El plato fue agregado correctamente","" , JOptionPane.INFORMATION_MESSAGE);
         }catch(NumberFormatException e){
             JOptionPane.showMessageDialog(this, "Problema con el campo costo'","Debes ingresar números",  JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_btnAddDrinkActionPerformed
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
-        WindowMain wMain = new WindowMain(model);
+        WindowMain wMain = new WindowMain(model,"");
         wMain.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnBackActionPerformed

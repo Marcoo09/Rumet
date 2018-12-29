@@ -5,11 +5,13 @@
  */
 package domain;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Usuario
  */
-public class KitchenPossibilities {
+public class KitchenPossibilities implements Serializable{
 
     public int cost;
     public String description;
@@ -35,4 +37,9 @@ public class KitchenPossibilities {
         this.description = description;
     }
 
+    @Override
+    public String toString() {
+        return description + ", Costo: " + cost ;
+    }
+    
 }

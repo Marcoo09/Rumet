@@ -66,15 +66,14 @@ public class WindowDrink extends javax.swing.JFrame {
               int cost = Integer.parseInt( txtCost.getText());
               Drink drink = new Drink(cost, description);
               model.addDrink(drink);
-              JOptionPane.showMessageDialog(this,"", "La bebida fue agregada correctamente", 0);
-              return;
+             JOptionPane.showMessageDialog(this,"La bebida fue agregada correctamente","" , JOptionPane.INFORMATION_MESSAGE);
         }catch(NumberFormatException e){
                JOptionPane.showMessageDialog(this, "Problema con el campo costo ","Debes ingresar números",  JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_btnAddDrinkActionPerformed
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
-        WindowMain wMain = new WindowMain(model);
+        WindowMain wMain = new WindowMain(model, "");
         wMain.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnBackActionPerformed

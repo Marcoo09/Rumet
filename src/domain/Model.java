@@ -1,11 +1,12 @@
 package domain;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  * @author Marco Fiorito
  */
-public class Model {
+public class Model implements Serializable{
 
     private ArrayList<Drink> listOfDrinks;
     private ArrayList<Plate> listOfPlates;
@@ -13,6 +14,16 @@ public class Model {
     private ArrayList<Client> listOfClients;
     private ArrayList<Table> listOfTables;
 
+    public  static String account = "rumet";
+    public static String password = "facil12.";
+    
+    public Model(){
+        listOfClients = new ArrayList<>();
+        listOfDrinks = new ArrayList<>();
+        listOfOrders = new ArrayList<>();
+        listOfPlates = new ArrayList<>();
+        listOfTables = new ArrayList<>();
+    }
     public void addDrink(Drink parmDrink) {
         this.getListOfDrinks().add(parmDrink);
     }

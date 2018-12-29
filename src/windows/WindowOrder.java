@@ -203,14 +203,14 @@ public class WindowOrder extends javax.swing.JFrame {
             Table table = model.getListOfTables().get(index - 1);
             Order order = new Order(orderPlates, orderDrinks, 0, table);
             model.addOrder(order);
-            JOptionPane.showMessageDialog(this,"", "La orden fue agregada correctamente", 0);
+            JOptionPane.showMessageDialog(this,"La orden fue agregada correctamente","" , JOptionPane.INFORMATION_MESSAGE);
         }
 
 
     }//GEN-LAST:event_btnAddOrderActionPerformed
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
-        WindowMain wMain = new WindowMain(model);
+        WindowMain wMain = new WindowMain(model, "");
         wMain.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnBackActionPerformed
