@@ -27,7 +27,10 @@ public class WindowMain extends javax.swing.JFrame {
         jpanelButtons.setPreferredSize(jpanel);
         
         if(typeOfUser.equals("cocina")){
-            
+            btnDrink.setVisible(false);
+            btnTable.setVisible(false);
+            btnPlate.setVisible(false);
+            btnOrder.setVisible(false);
         }
         
     }
@@ -40,7 +43,7 @@ public class WindowMain extends javax.swing.JFrame {
         btnOrder = new javax.swing.JButton();
         btnPlate = new javax.swing.JButton();
         btnDrink = new javax.swing.JButton();
-        btnMesa = new javax.swing.JButton();
+        btnTable = new javax.swing.JButton();
         btnClose = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -74,13 +77,13 @@ public class WindowMain extends javax.swing.JFrame {
         });
         jpanelButtons.add(btnDrink);
 
-        btnMesa.setText("Mesa");
-        btnMesa.addActionListener(new java.awt.event.ActionListener() {
+        btnTable.setText("Mesa");
+        btnTable.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnMesaActionPerformed(evt);
+                btnTableActionPerformed(evt);
             }
         });
-        jpanelButtons.add(btnMesa);
+        jpanelButtons.add(btnTable);
 
         btnClose.setText("Salir");
         btnClose.addActionListener(new java.awt.event.ActionListener() {
@@ -107,11 +110,11 @@ public class WindowMain extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_btnDrinkActionPerformed
 
-    private void btnMesaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMesaActionPerformed
+    private void btnTableActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTableActionPerformed
        WindowTable wTable = new WindowTable(model);
         wTable.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_btnMesaActionPerformed
+    }//GEN-LAST:event_btnTableActionPerformed
 
     private void btnOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOrderActionPerformed
        
@@ -137,9 +140,9 @@ public class WindowMain extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnClose;
     private javax.swing.JButton btnDrink;
-    private javax.swing.JButton btnMesa;
     private javax.swing.JButton btnOrder;
     private javax.swing.JButton btnPlate;
+    private javax.swing.JButton btnTable;
     private javax.swing.JPanel jpanelButtons;
     // End of variables declaration//GEN-END:variables
 }
