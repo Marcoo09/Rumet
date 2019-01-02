@@ -23,25 +23,90 @@ public class WindowTable extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanelMain = new javax.swing.JPanel();
+        jPanel1 = new javax.swing.JPanel();
         lblRange = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        btnBack = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        jPanel4 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
         txtFinal = new javax.swing.JTextField();
         txtInit = new javax.swing.JTextField();
+        jPanel5 = new javax.swing.JPanel();
+        jPanel6 = new javax.swing.JPanel();
+        jPanel7 = new javax.swing.JPanel();
+        jPanel8 = new javax.swing.JPanel();
+        jPanel9 = new javax.swing.JPanel();
         btnAdd = new javax.swing.JButton();
-        btnBack = new javax.swing.JButton();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        jPanel10 = new javax.swing.JPanel();
+        jPanel11 = new javax.swing.JPanel();
+        jPanel12 = new javax.swing.JPanel();
+        jPanel13 = new javax.swing.JPanel();
+        jPanel14 = new javax.swing.JPanel();
+        jPanel15 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        getContentPane().setLayout(new java.awt.GridLayout());
+
+        jPanelMain.setLayout(new java.awt.GridLayout(5, 3));
+
+        jPanel1.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 5, 40));
 
         lblRange.setText("Rango de mesas a agregar");
-        getContentPane().add(lblRange, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, -1, -1));
+        jPanel1.add(lblRange);
 
+        jPanelMain.add(jPanel1);
+        jPanelMain.add(jPanel2);
+
+        jPanel3.setLayout(new java.awt.GridLayout(3, 3));
+        jPanel3.add(jLabel3);
+        jPanel3.add(jLabel4);
+
+        btnBack.setText("Volver");
+        btnBack.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBackActionPerformed(evt);
+            }
+        });
+        jPanel3.add(btnBack);
+        jPanel3.add(jLabel5);
+        jPanel3.add(jLabel6);
+        jPanel3.add(jLabel17);
+        jPanel3.add(jLabel18);
+        jPanel3.add(jLabel19);
+
+        jPanelMain.add(jPanel3);
+
+        jPanel4.setLayout(new java.awt.GridLayout(3, 3));
+
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Final");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 90, -1, -1));
+        jPanel4.add(jLabel1);
 
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Inicial");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, -1, -1));
+        jPanel4.add(jLabel2);
+        jPanel4.add(jLabel11);
+        jPanel4.add(jLabel12);
 
         txtFinal.setText(" ");
         txtFinal.addActionListener(new java.awt.event.ActionListener() {
@@ -49,7 +114,7 @@ public class WindowTable extends javax.swing.JFrame {
                 txtFinalActionPerformed(evt);
             }
         });
-        getContentPane().add(txtFinal, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 130, 70, -1));
+        jPanel4.add(txtFinal);
 
         txtInit.setText(" ");
         txtInit.addActionListener(new java.awt.event.ActionListener() {
@@ -57,7 +122,15 @@ public class WindowTable extends javax.swing.JFrame {
                 txtInitActionPerformed(evt);
             }
         });
-        getContentPane().add(txtInit, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, 70, -1));
+        jPanel4.add(txtInit);
+
+        jPanelMain.add(jPanel4);
+        jPanelMain.add(jPanel5);
+        jPanelMain.add(jPanel6);
+        jPanelMain.add(jPanel7);
+        jPanelMain.add(jPanel8);
+
+        jPanel9.setLayout(new java.awt.GridLayout(3, 3));
 
         btnAdd.setText("Agregar");
         btnAdd.addActionListener(new java.awt.event.ActionListener() {
@@ -65,15 +138,25 @@ public class WindowTable extends javax.swing.JFrame {
                 btnAddActionPerformed(evt);
             }
         });
-        getContentPane().add(btnAdd, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 220, -1, -1));
+        jPanel9.add(btnAdd);
+        jPanel9.add(jLabel7);
+        jPanel9.add(jLabel9);
+        jPanel9.add(jLabel10);
+        jPanel9.add(jLabel8);
+        jPanel9.add(jLabel13);
+        jPanel9.add(jLabel14);
+        jPanel9.add(jLabel15);
+        jPanel9.add(jLabel16);
 
-        btnBack.setText("Back");
-        btnBack.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBackActionPerformed(evt);
-            }
-        });
-        getContentPane().add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 10, -1, -1));
+        jPanelMain.add(jPanel9);
+        jPanelMain.add(jPanel10);
+        jPanelMain.add(jPanel11);
+        jPanelMain.add(jPanel12);
+        jPanelMain.add(jPanel13);
+        jPanelMain.add(jPanel14);
+        jPanelMain.add(jPanel15);
+
+        getContentPane().add(jPanelMain);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -122,7 +205,40 @@ public class WindowTable extends javax.swing.JFrame {
     private javax.swing.JButton btnAdd;
     private javax.swing.JButton btnBack;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel10;
+    private javax.swing.JPanel jPanel11;
+    private javax.swing.JPanel jPanel12;
+    private javax.swing.JPanel jPanel13;
+    private javax.swing.JPanel jPanel14;
+    private javax.swing.JPanel jPanel15;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel7;
+    private javax.swing.JPanel jPanel8;
+    private javax.swing.JPanel jPanel9;
+    private javax.swing.JPanel jPanelMain;
     private javax.swing.JLabel lblRange;
     private javax.swing.JTextField txtFinal;
     private javax.swing.JTextField txtInit;

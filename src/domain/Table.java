@@ -25,5 +25,10 @@ public class Table implements Comparable<Table>, Serializable{
     public int compareTo(Table t) {
         return this.getNumber() - t.getNumber();
     }
+
+    @Override
+    public String toString() {
+        return "Mesa "+ number;
+    }
         
 }

@@ -132,7 +132,6 @@ public class WindowMain extends javax.swing.JFrame {
     }//GEN-LAST:event_btnOrderActionPerformed
 
     private void btnCloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCloseActionPerformed
-        Utils.serialize(model);
         this.dispose();
     }//GEN-LAST:event_btnCloseActionPerformed
 

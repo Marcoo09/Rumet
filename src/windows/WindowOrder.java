@@ -7,6 +7,7 @@ import domain.Plate;
 import domain.Table;
 import java.util.ArrayList;
 import java.util.Collections;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
@@ -22,192 +23,307 @@ public class WindowOrder extends javax.swing.JFrame {
     public WindowOrder(Model m) {
         model = m;
         initComponents();
+        
         this.setExtendedState(JFrame.MAXIMIZED_BOTH);
-
         lstPlates.setListData(model.getListOfPlates().toArray());
         lstDrinks.setListData(model.getListOfDrinks().toArray());
         
         Collections.sort(model.getListOfTables());
         
-        cbxTables.addItem("");
-        for (int i = 0; i < model.getListOfTables().size(); i++) {
-            Table currentTable = model.getListOfTables().get(i);
-            cbxTables.addItem("" + currentTable.getNumber());
-        }
+        jcbTables.setModel(new DefaultComboBoxModel(model.getListOfTables().toArray()));
+
         orderPlates = new ArrayList<>();
         orderDrinks = new ArrayList<>();
+        lstOrderPlates.setListData(orderPlates.toArray());
+        lstOrderDrinks.setListData(orderDrinks.toArray());
+        
     }
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        lblPlates = new javax.swing.JLabel();
-        lblOrderPlates = new javax.swing.JLabel();
-        lblOrderDrink = new javax.swing.JLabel();
-        lblDrink = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        lstOrderPlates = new javax.swing.JList();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        lstDrinks = new javax.swing.JList();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        lstOrderDrinks = new javax.swing.JList();
-        jScrollPane4 = new javax.swing.JScrollPane();
-        lstPlates = new javax.swing.JList();
-        btnPlatesLeft = new javax.swing.JButton();
-        btnPlatesRight = new javax.swing.JButton();
-        btnDrinkRight = new javax.swing.JButton();
-        btnDrinkLeft = new javax.swing.JButton();
-        lblTable = new javax.swing.JLabel();
-        cbxTables = new javax.swing.JComboBox<>();
-        btnAddOrder = new javax.swing.JButton();
+        jpanelMain = new javax.swing.JPanel();
+        jPanel1 = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
+        jPanel3 = new javax.swing.JPanel();
+        jPanel4 = new javax.swing.JPanel();
+        jPanel5 = new javax.swing.JPanel();
+        jPanel6 = new javax.swing.JPanel();
+        jPanel7 = new javax.swing.JPanel();
+        jPanel8 = new javax.swing.JPanel();
+        jPanel9 = new javax.swing.JPanel();
         btnBack = new javax.swing.JButton();
+        jPanel10 = new javax.swing.JPanel();
+        jPanel11 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jPanel12 = new javax.swing.JPanel();
+        jPanel13 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        jPanel14 = new javax.swing.JPanel();
+        jPanel15 = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        jPanel16 = new javax.swing.JPanel();
+        jPanel17 = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
+        jPanel18 = new javax.swing.JPanel();
+        jPanel19 = new javax.swing.JPanel();
+        jPanel20 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        lstPlates = new javax.swing.JList();
+        jPanel21 = new javax.swing.JPanel();
+        jButton1 = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jButton3 = new javax.swing.JButton();
+        jPanel22 = new javax.swing.JPanel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        lstOrderPlates = new javax.swing.JList();
+        jPanel23 = new javax.swing.JPanel();
+        jPanel24 = new javax.swing.JPanel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        lstDrinks = new javax.swing.JList();
+        jPanel25 = new javax.swing.JPanel();
+        jButton2 = new javax.swing.JButton();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jButton4 = new javax.swing.JButton();
+        jPanel26 = new javax.swing.JPanel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        lstOrderDrinks = new javax.swing.JList();
+        jPanel27 = new javax.swing.JPanel();
+        jPanel28 = new javax.swing.JPanel();
+        jPanel29 = new javax.swing.JPanel();
+        jPanel30 = new javax.swing.JPanel();
+        jPanel31 = new javax.swing.JPanel();
+        jPanel32 = new javax.swing.JPanel();
+        jPanel33 = new javax.swing.JPanel();
+        jPanel34 = new javax.swing.JPanel();
+        jPanel35 = new javax.swing.JPanel();
+        jPanel36 = new javax.swing.JPanel();
+        jPanel37 = new javax.swing.JPanel();
+        jPanel38 = new javax.swing.JPanel();
+        jLabel9 = new javax.swing.JLabel();
+        jPanel39 = new javax.swing.JPanel();
+        jcbTables = new javax.swing.JComboBox();
+        jPanel40 = new javax.swing.JPanel();
+        jPanel41 = new javax.swing.JPanel();
+        jPanel42 = new javax.swing.JPanel();
+        jPanel43 = new javax.swing.JPanel();
+        jPanel44 = new javax.swing.JPanel();
+        btnAdd = new javax.swing.JButton();
+        jPanel45 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        getContentPane().setLayout(new java.awt.GridLayout(1, 0));
 
-        lblPlates.setText("Platos");
-        getContentPane().add(lblPlates, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, -1, -1));
+        jpanelMain.setLayout(new java.awt.GridLayout(5, 9));
+        jpanelMain.add(jPanel1);
+        jpanelMain.add(jPanel2);
+        jpanelMain.add(jPanel3);
+        jpanelMain.add(jPanel4);
+        jpanelMain.add(jPanel5);
+        jpanelMain.add(jPanel6);
+        jpanelMain.add(jPanel7);
+        jpanelMain.add(jPanel8);
 
-        lblOrderPlates.setText("Platos Pedidos");
-        getContentPane().add(lblOrderPlates, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 10, -1, -1));
-
-        lblOrderDrink.setText("Bebidas pedidas");
-        getContentPane().add(lblOrderDrink, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 10, -1, -1));
-
-        lblDrink.setText("Bebidas");
-        getContentPane().add(lblDrink, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 10, -1, -1));
-
-        lstOrderPlates.setModel(new javax.swing.AbstractListModel() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public Object getElementAt(int i) { return strings[i]; }
+        btnBack.setText("Volver");
+        btnBack.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBackActionPerformed(evt);
+            }
         });
-        jScrollPane1.setViewportView(lstOrderPlates);
+        jPanel9.add(btnBack);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 30, -1, -1));
+        jpanelMain.add(jPanel9);
+        jpanelMain.add(jPanel10);
 
-        lstDrinks.setModel(new javax.swing.AbstractListModel() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public Object getElementAt(int i) { return strings[i]; }
-        });
-        jScrollPane2.setViewportView(lstDrinks);
+        jPanel11.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 5, 60));
 
-        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 30, -1, -1));
+        jLabel1.setText("Platos");
+        jPanel11.add(jLabel1);
 
-        lstOrderDrinks.setModel(new javax.swing.AbstractListModel() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public Object getElementAt(int i) { return strings[i]; }
-        });
-        jScrollPane3.setViewportView(lstOrderDrinks);
+        jpanelMain.add(jPanel11);
+        jpanelMain.add(jPanel12);
 
-        getContentPane().add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 30, -1, -1));
+        jPanel13.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 5, 60));
+
+        jLabel2.setText("Platos Pedidos");
+        jPanel13.add(jLabel2);
+
+        jpanelMain.add(jPanel13);
+        jpanelMain.add(jPanel14);
+
+        jPanel15.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 5, 60));
+
+        jLabel3.setText("Bebidas");
+        jPanel15.add(jLabel3);
+
+        jpanelMain.add(jPanel15);
+        jpanelMain.add(jPanel16);
+
+        jPanel17.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 1, 60));
+
+        jLabel4.setText("Bebidas Pedidas");
+        jPanel17.add(jLabel4);
+
+        jpanelMain.add(jPanel17);
+        jpanelMain.add(jPanel18);
+        jpanelMain.add(jPanel19);
 
         lstPlates.setModel(new javax.swing.AbstractListModel() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
             public Object getElementAt(int i) { return strings[i]; }
         });
-        jScrollPane4.setViewportView(lstPlates);
+        jScrollPane1.setViewportView(lstPlates);
 
-        getContentPane().add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, -1, -1));
+        jPanel20.add(jScrollPane1);
 
-        btnPlatesLeft.setText("<");
-        btnPlatesLeft.addActionListener(new java.awt.event.ActionListener() {
+        jpanelMain.add(jPanel20);
+
+        jPanel21.setLayout(new java.awt.GridLayout(4, 2));
+
+        jButton1.setText(">");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnPlatesLeftActionPerformed(evt);
+                jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(btnPlatesLeft, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 120, 40, -1));
+        jPanel21.add(jButton1);
+        jPanel21.add(jLabel5);
+        jPanel21.add(jLabel6);
 
-        btnPlatesRight.setText(">");
-        btnPlatesRight.addActionListener(new java.awt.event.ActionListener() {
+        jButton3.setText("<");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnPlatesRightActionPerformed(evt);
+                jButton3ActionPerformed(evt);
             }
         });
-        getContentPane().add(btnPlatesRight, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 60, 40, -1));
+        jPanel21.add(jButton3);
 
-        btnDrinkRight.setText(">");
-        btnDrinkRight.addActionListener(new java.awt.event.ActionListener() {
+        jpanelMain.add(jPanel21);
+
+        lstOrderPlates.setModel(new javax.swing.AbstractListModel() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public Object getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane2.setViewportView(lstOrderPlates);
+
+        jPanel22.add(jScrollPane2);
+
+        jpanelMain.add(jPanel22);
+        jpanelMain.add(jPanel23);
+
+        lstDrinks.setModel(new javax.swing.AbstractListModel() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public Object getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane3.setViewportView(lstDrinks);
+
+        jPanel24.add(jScrollPane3);
+
+        jpanelMain.add(jPanel24);
+
+        jPanel25.setLayout(new java.awt.GridLayout(4, 2));
+
+        jButton2.setText(">");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnDrinkRightActionPerformed(evt);
+                jButton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(btnDrinkRight, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 70, 40, -1));
+        jPanel25.add(jButton2);
+        jPanel25.add(jLabel7);
+        jPanel25.add(jLabel8);
 
-        btnDrinkLeft.setText("<");
-        btnDrinkLeft.addActionListener(new java.awt.event.ActionListener() {
+        jButton4.setText("<");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnDrinkLeftActionPerformed(evt);
+                jButton4ActionPerformed(evt);
             }
         });
-        getContentPane().add(btnDrinkLeft, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 120, 40, -1));
+        jPanel25.add(jButton4);
 
-        lblTable.setText("Mesa:");
-        getContentPane().add(lblTable, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 200, -1, -1));
+        jpanelMain.add(jPanel25);
 
-        cbxTables.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        getContentPane().add(cbxTables, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 200, -1, -1));
+        lstOrderDrinks.setModel(new javax.swing.AbstractListModel() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public Object getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane4.setViewportView(lstOrderDrinks);
 
-        btnAddOrder.setText("Agregar");
-        btnAddOrder.addActionListener(new java.awt.event.ActionListener() {
+        jPanel26.add(jScrollPane4);
+
+        jpanelMain.add(jPanel26);
+        jpanelMain.add(jPanel27);
+        jpanelMain.add(jPanel28);
+        jpanelMain.add(jPanel29);
+        jpanelMain.add(jPanel30);
+        jpanelMain.add(jPanel31);
+        jpanelMain.add(jPanel32);
+        jpanelMain.add(jPanel33);
+        jpanelMain.add(jPanel34);
+        jpanelMain.add(jPanel35);
+        jpanelMain.add(jPanel36);
+        jpanelMain.add(jPanel37);
+
+        jLabel9.setText("Mesa:");
+        jPanel38.add(jLabel9);
+
+        jpanelMain.add(jPanel38);
+
+        jcbTables.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jPanel39.add(jcbTables);
+
+        jpanelMain.add(jPanel39);
+        jpanelMain.add(jPanel40);
+        jpanelMain.add(jPanel41);
+        jpanelMain.add(jPanel42);
+        jpanelMain.add(jPanel43);
+
+        btnAdd.setText("Agregar");
+        btnAdd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAddOrderActionPerformed(evt);
+                btnAddActionPerformed(evt);
             }
         });
-        getContentPane().add(btnAddOrder, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 230, -1, -1));
+        jPanel44.add(btnAdd);
 
-        btnBack.setText("Back");
-        btnBack.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBackActionPerformed(evt);
-            }
-        });
-        getContentPane().add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 20, -1, -1));
+        jpanelMain.add(jPanel44);
+        jpanelMain.add(jPanel45);
+
+        getContentPane().add(jpanelMain);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnPlatesRightActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPlatesRightActionPerformed
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         Plate selectedPlate = (Plate)lstPlates.getSelectedValue();
         orderPlates.add(selectedPlate);
         lstOrderPlates.setListData(orderPlates.toArray());
-    }//GEN-LAST:event_btnPlatesRightActionPerformed
+    }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void btnPlatesLeftActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPlatesLeftActionPerformed
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         Plate selectedPlate = (Plate)lstOrderPlates.getSelectedValue();
         orderPlates.remove(selectedPlate);
         lstOrderPlates.setListData(orderPlates.toArray());
-    }//GEN-LAST:event_btnPlatesLeftActionPerformed
+    }//GEN-LAST:event_jButton3ActionPerformed
 
-    private void btnDrinkRightActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDrinkRightActionPerformed
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         Drink selectedDrink = (Drink)lstDrinks.getSelectedValue();
         orderDrinks.add(selectedDrink);
         lstOrderDrinks.setListData(orderDrinks.toArray());
-    }//GEN-LAST:event_btnDrinkRightActionPerformed
+    }//GEN-LAST:event_jButton2ActionPerformed
 
-    private void btnDrinkLeftActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDrinkLeftActionPerformed
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         Drink selectedDrink = (Drink)lstOrderDrinks.getSelectedValue();
         orderDrinks.remove(selectedDrink);
         lstOrderDrinks.setListData(orderDrinks.toArray());
-    }//GEN-LAST:event_btnDrinkLeftActionPerformed
-
-    private void btnAddOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddOrderActionPerformed
-        int index = cbxTables.getSelectedIndex();
-        if(index == 0){
-            JOptionPane.showMessageDialog(this, "Error mesa'","Debes seleccionar una mesa",  JOptionPane.ERROR_MESSAGE);
-        }else{
-            Table table = model.getListOfTables().get(index - 1);
-            Order order = new Order(orderPlates, orderDrinks, 0, table);
-            model.addOrder(order);
-            JOptionPane.showMessageDialog(this,"La orden fue agregada correctamente","" , JOptionPane.INFORMATION_MESSAGE);
-        }
-
-
-    }//GEN-LAST:event_btnAddOrderActionPerformed
+    }//GEN-LAST:event_jButton4ActionPerformed
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         WindowMain wMain = new WindowMain(model, "");
@@ -215,23 +331,99 @@ public class WindowOrder extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_btnBackActionPerformed
 
+    private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
+        Order order;
+        
+        String table = jcbTables.getSelectedItem().toString();
+        int number = Integer.parseInt(Character.toString(table.charAt(table.length())));
+        
+        Table selectedTable = null;
+        Table currentTable;
+        
+        for(int i = 0; i < model.getListOfTables().size(); i++){
+            currentTable = model.getListOfTables().get(i);
+            if(currentTable.getNumber() == number){
+                selectedTable = currentTable;
+            }
+        }
+
+        if(orderDrinks.isEmpty() && orderPlates.isEmpty()){
+               JOptionPane.showMessageDialog(this, "No has agregado ni platos ni bebidas ","Error",  JOptionPane.ERROR_MESSAGE);
+        }else{
+            order = new Order(orderPlates, orderDrinks, 0, selectedTable);
+            model.addOrder(order);
+            JOptionPane.showMessageDialog(this,"La Orden fue agregada correctamente","" , JOptionPane.INFORMATION_MESSAGE);
+        }
+        
+    }//GEN-LAST:event_btnAddActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnAddOrder;
+    private javax.swing.JButton btnAdd;
     private javax.swing.JButton btnBack;
-    private javax.swing.JButton btnDrinkLeft;
-    private javax.swing.JButton btnDrinkRight;
-    private javax.swing.JButton btnPlatesLeft;
-    private javax.swing.JButton btnPlatesRight;
-    private javax.swing.JComboBox<String> cbxTables;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel10;
+    private javax.swing.JPanel jPanel11;
+    private javax.swing.JPanel jPanel12;
+    private javax.swing.JPanel jPanel13;
+    private javax.swing.JPanel jPanel14;
+    private javax.swing.JPanel jPanel15;
+    private javax.swing.JPanel jPanel16;
+    private javax.swing.JPanel jPanel17;
+    private javax.swing.JPanel jPanel18;
+    private javax.swing.JPanel jPanel19;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel20;
+    private javax.swing.JPanel jPanel21;
+    private javax.swing.JPanel jPanel22;
+    private javax.swing.JPanel jPanel23;
+    private javax.swing.JPanel jPanel24;
+    private javax.swing.JPanel jPanel25;
+    private javax.swing.JPanel jPanel26;
+    private javax.swing.JPanel jPanel27;
+    private javax.swing.JPanel jPanel28;
+    private javax.swing.JPanel jPanel29;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel30;
+    private javax.swing.JPanel jPanel31;
+    private javax.swing.JPanel jPanel32;
+    private javax.swing.JPanel jPanel33;
+    private javax.swing.JPanel jPanel34;
+    private javax.swing.JPanel jPanel35;
+    private javax.swing.JPanel jPanel36;
+    private javax.swing.JPanel jPanel37;
+    private javax.swing.JPanel jPanel38;
+    private javax.swing.JPanel jPanel39;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel40;
+    private javax.swing.JPanel jPanel41;
+    private javax.swing.JPanel jPanel42;
+    private javax.swing.JPanel jPanel43;
+    private javax.swing.JPanel jPanel44;
+    private javax.swing.JPanel jPanel45;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel7;
+    private javax.swing.JPanel jPanel8;
+    private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
-    private javax.swing.JLabel lblDrink;
-    private javax.swing.JLabel lblOrderDrink;
-    private javax.swing.JLabel lblOrderPlates;
-    private javax.swing.JLabel lblPlates;
-    private javax.swing.JLabel lblTable;
+    private javax.swing.JComboBox jcbTables;
+    private javax.swing.JPanel jpanelMain;
     private javax.swing.JList lstDrinks;
     private javax.swing.JList lstOrderDrinks;
     private javax.swing.JList lstOrderPlates;

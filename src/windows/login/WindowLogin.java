@@ -110,6 +110,11 @@ public class WindowLogin extends javax.swing.JFrame {
         txtAccount.setBorder(null);
         txtAccount.setCaretColor(new java.awt.Color(255, 255, 255));
         txtAccount.setPreferredSize(new java.awt.Dimension(6, 24));
+        txtAccount.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtAccountMouseClicked(evt);
+            }
+        });
         txtAccount.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtAccountActionPerformed(evt);
@@ -119,9 +124,14 @@ public class WindowLogin extends javax.swing.JFrame {
 
         txtPassword.setBackground(new java.awt.Color(51, 0, 0));
         txtPassword.setForeground(new java.awt.Color(255, 255, 255));
-        txtPassword.setText("jPasswordField1");
+        txtPassword.setText("Contraseña");
         txtPassword.setBorder(null);
         txtPassword.setCaretColor(new java.awt.Color(255, 255, 255));
+        txtPassword.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtPasswordMouseClicked(evt);
+            }
+        });
         jPanel2.add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 310, 236, 40));
 
         btnLogin.setBackground(new java.awt.Color(255, 51, 51));
@@ -195,6 +205,18 @@ public class WindowLogin extends javax.swing.JFrame {
         }
 
     }//GEN-LAST:event_btnLoginActionPerformed
+
+    private void txtAccountMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtAccountMouseClicked
+         if(txtAccount.getText().equals("Usuario")){
+                txtAccount.setText("");
+            }  
+    }//GEN-LAST:event_txtAccountMouseClicked
+
+    private void txtPasswordMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtPasswordMouseClicked
+            if(txtPassword.getText().equals("Contraseña"))            {
+                txtPassword.setText("");
+            }  
+    }//GEN-LAST:event_txtPasswordMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
