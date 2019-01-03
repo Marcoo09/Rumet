@@ -2,6 +2,7 @@ package domain;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Collections;
 
 /**
  * @author Marco Fiorito
@@ -33,7 +34,8 @@ public class Model implements Serializable{
     }
 
     public void addOrder(Order parmOrder) {
-        this.getListOfOrders().add(parmOrder);
+        this.getSortedListOfOrders().add(parmOrder);
+        Collections.sort(listOfOrders);
     }
     
     public void addClient(Client parmClient) {
@@ -52,7 +54,8 @@ public class Model implements Serializable{
         return listOfPlates;
     }
 
-    public ArrayList<Order> getListOfOrders() {
+    public ArrayList<Order> getSortedListOfOrders() {
+        Collections.sort(listOfOrders);
         return listOfOrders;
     }
     public ArrayList<Client> getListOfClients() {

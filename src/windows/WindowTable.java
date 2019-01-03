@@ -37,12 +37,12 @@ public class WindowTable extends javax.swing.JFrame {
         jLabel18 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
-        txtFinal = new javax.swing.JTextField();
         txtInit = new javax.swing.JTextField();
+        txtFinal = new javax.swing.JTextField();
         jPanel5 = new javax.swing.JPanel();
         jPanel6 = new javax.swing.JPanel();
         jPanel7 = new javax.swing.JPanel();
@@ -65,7 +65,7 @@ public class WindowTable extends javax.swing.JFrame {
         jPanel15 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(new java.awt.GridLayout());
+        getContentPane().setLayout(new java.awt.GridLayout(1, 0));
 
         jPanelMain.setLayout(new java.awt.GridLayout(5, 3));
 
@@ -98,23 +98,15 @@ public class WindowTable extends javax.swing.JFrame {
 
         jPanel4.setLayout(new java.awt.GridLayout(3, 3));
 
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Final");
-        jPanel4.add(jLabel1);
-
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Inicial");
         jPanel4.add(jLabel2);
+
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("Final");
+        jPanel4.add(jLabel1);
         jPanel4.add(jLabel11);
         jPanel4.add(jLabel12);
-
-        txtFinal.setText(" ");
-        txtFinal.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtFinalActionPerformed(evt);
-            }
-        });
-        jPanel4.add(txtFinal);
 
         txtInit.setText(" ");
         txtInit.addActionListener(new java.awt.event.ActionListener() {
@@ -123,6 +115,14 @@ public class WindowTable extends javax.swing.JFrame {
             }
         });
         jPanel4.add(txtInit);
+
+        txtFinal.setText(" ");
+        txtFinal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtFinalActionPerformed(evt);
+            }
+        });
+        jPanel4.add(txtFinal);
 
         jPanelMain.add(jPanel4);
         jPanelMain.add(jPanel5);
@@ -176,8 +176,8 @@ public class WindowTable extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Error","Debes llenar ambos campos", JOptionPane.ERROR_MESSAGE);
         }else{
             try{
-                init = Integer.parseInt(txtInit.getText());
-                fin = Integer.parseInt(txtFinal.getText());
+                init = Integer.parseInt(txtInit.getText().trim());
+                fin = Integer.parseInt(txtFinal.getText().trim());
                 if(fin >= init){
                     while(init <= fin){
                         Table table = new Table(init);
@@ -186,7 +186,7 @@ public class WindowTable extends javax.swing.JFrame {
                     }
                     JOptionPane.showMessageDialog(this, "Las mesas fueron agregadas correctamente","", JOptionPane.INFORMATION_MESSAGE);
                 }else{
-                    JOptionPane.showMessageDialog(this, "Error","Rango inválido", JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(this, "Rango inválido","Error", JOptionPane.ERROR_MESSAGE);
                 }
             }catch(NumberFormatException e){
                    JOptionPane.showMessageDialog(this, "Error","Debes escribir solo números", JOptionPane.ERROR_MESSAGE);

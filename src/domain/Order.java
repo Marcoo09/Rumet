@@ -7,7 +7,7 @@ import java.util.Date;
 /**
  * @author Marco Fiorito
  */
-public class Order implements Serializable{
+public class Order implements Serializable, Comparable{
     
     private ArrayList<Plate> listOfPlates;
     private ArrayList<Drink> listOfDrinks;
@@ -21,6 +21,7 @@ public class Order implements Serializable{
         this.listOfDrinks = listOfDrinks;
         this.discount = discount;
         this.table = t;
+        this.date = new Date();
     }
 
     public ArrayList<Plate> getListOfPlates() {
@@ -65,8 +66,12 @@ public class Order implements Serializable{
 
     @Override
     public String toString() {
-        return "Pedido: " + " Total " + total + ", Mesa " + table;
+        return " Mesa " + table + " Hora: " + date.toString();
     }
-    
+
+    @Override
+    public int compareTo(Object t) {
+            return this.date.compareTo(((Order)t).getDate());
+    }
     
 }

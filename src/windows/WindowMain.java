@@ -45,6 +45,8 @@ public class WindowMain extends javax.swing.JFrame {
         btnDrink = new javax.swing.JButton();
         btnTable = new javax.swing.JButton();
         btnClose = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
+        btnListOfOrders = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new java.awt.GridLayout(15, 0));
@@ -95,6 +97,18 @@ public class WindowMain extends javax.swing.JFrame {
 
         getContentPane().add(jpanelButtons);
 
+        jPanel1.setLayout(new java.awt.GridLayout());
+
+        btnListOfOrders.setText("Lista de pedidos");
+        btnListOfOrders.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnListOfOrdersActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnListOfOrders);
+
+        getContentPane().add(jPanel1);
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -135,13 +149,21 @@ public class WindowMain extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_btnCloseActionPerformed
 
+    private void btnListOfOrdersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListOfOrdersActionPerformed
+        WindowOrderDetail orderDetail = new WindowOrderDetail(model);
+        orderDetail.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnListOfOrdersActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnClose;
     private javax.swing.JButton btnDrink;
+    private javax.swing.JButton btnListOfOrders;
     private javax.swing.JButton btnOrder;
     private javax.swing.JButton btnPlate;
     private javax.swing.JButton btnTable;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jpanelButtons;
     // End of variables declaration//GEN-END:variables
 }

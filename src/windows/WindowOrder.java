@@ -335,7 +335,7 @@ public class WindowOrder extends javax.swing.JFrame {
         Order order;
         
         String table = jcbTables.getSelectedItem().toString();
-        int number = Integer.parseInt(Character.toString(table.charAt(table.length())));
+        int number = Integer.parseInt(Character.toString(table.charAt(table.length() - 1)));
         
         Table selectedTable = null;
         Table currentTable;
