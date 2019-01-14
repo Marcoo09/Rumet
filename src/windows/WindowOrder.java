@@ -19,8 +19,9 @@ public class WindowOrder extends javax.swing.JFrame {
     private Model model;
     private ArrayList<Plate> orderPlates;
     private ArrayList<Drink> orderDrinks;
+    private boolean isAnUpdate = false;
     
-    public WindowOrder(Model m) {
+    public WindowOrder(Model m, Order order) {
         model = m;
         initComponents();
         
@@ -31,12 +32,19 @@ public class WindowOrder extends javax.swing.JFrame {
         Collections.sort(model.getListOfTables());
         
         jcbTables.setModel(new DefaultComboBoxModel(model.getListOfTables().toArray()));
-
-        orderPlates = new ArrayList<>();
-        orderDrinks = new ArrayList<>();
-        lstOrderPlates.setListData(orderPlates.toArray());
-        lstOrderDrinks.setListData(orderDrinks.toArray());
         
+        if(order.equals(null)){
+            orderPlates = new ArrayList<>();
+            orderDrinks = new ArrayList<>();
+         
+        }else{
+            isAnUpdate = true;
+            orderPlates = order.getListOfPlates();
+            orderDrinks = order.getListOfDrinks();
+            jcbTables.setSelectedIndex(order.getTable().getNumber() - 1);
+        }
+            lstOrderPlates.setListData(orderPlates.toArray());
+            lstOrderDrinks.setListData(orderDrinks.toArray());   
     }
 
     @SuppressWarnings("unchecked")
@@ -107,7 +115,9 @@ public class WindowOrder extends javax.swing.JFrame {
         jPanel39 = new javax.swing.JPanel();
         jcbTables = new javax.swing.JComboBox();
         jPanel40 = new javax.swing.JPanel();
+        jLabel10 = new javax.swing.JLabel();
         jPanel41 = new javax.swing.JPanel();
+        txtDiscount = new javax.swing.JTextField();
         jPanel42 = new javax.swing.JPanel();
         jPanel43 = new javax.swing.JPanel();
         jPanel44 = new javax.swing.JPanel();
@@ -171,6 +181,8 @@ public class WindowOrder extends javax.swing.JFrame {
         jpanelMain.add(jPanel18);
         jpanelMain.add(jPanel19);
 
+        jPanel20.setLayout(new java.awt.GridLayout());
+
         lstPlates.setModel(new javax.swing.AbstractListModel() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
@@ -204,6 +216,8 @@ public class WindowOrder extends javax.swing.JFrame {
 
         jpanelMain.add(jPanel21);
 
+        jPanel22.setLayout(new java.awt.GridLayout());
+
         lstOrderPlates.setModel(new javax.swing.AbstractListModel() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
@@ -215,6 +229,8 @@ public class WindowOrder extends javax.swing.JFrame {
 
         jpanelMain.add(jPanel22);
         jpanelMain.add(jPanel23);
+
+        jPanel24.setLayout(new java.awt.GridLayout());
 
         lstDrinks.setModel(new javax.swing.AbstractListModel() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
@@ -249,6 +265,8 @@ public class WindowOrder extends javax.swing.JFrame {
 
         jpanelMain.add(jPanel25);
 
+        jPanel26.setLayout(new java.awt.GridLayout());
+
         lstOrderDrinks.setModel(new javax.swing.AbstractListModel() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
@@ -280,7 +298,14 @@ public class WindowOrder extends javax.swing.JFrame {
         jPanel39.add(jcbTables);
 
         jpanelMain.add(jPanel39);
+
+        jLabel10.setText("Descuento:");
+        jPanel40.add(jLabel10);
+
         jpanelMain.add(jPanel40);
+
+        jPanel41.add(txtDiscount);
+
         jpanelMain.add(jPanel41);
         jpanelMain.add(jPanel42);
         jpanelMain.add(jPanel43);
@@ -326,9 +351,13 @@ public class WindowOrder extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
-        WindowMain wMain = new WindowMain(model, "");
-        wMain.setVisible(true);
-        this.dispose();
+        if(isAnUpdate){
+            this.dispose();
+        }else{
+            WindowMain wMain = new WindowMain(model, "");
+            wMain.setVisible(true);
+            this.dispose();            
+        }
     }//GEN-LAST:event_btnBackActionPerformed
 
     private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
@@ -336,6 +365,7 @@ public class WindowOrder extends javax.swing.JFrame {
         
         String table = jcbTables.getSelectedItem().toString();
         int number = Integer.parseInt(Character.toString(table.charAt(table.length() - 1)));
+        float discount = Float.parseFloat(txtDiscount.getText());
         
         Table selectedTable = null;
         Table currentTable;
@@ -350,7 +380,7 @@ public class WindowOrder extends javax.swing.JFrame {
         if(orderDrinks.isEmpty() && orderPlates.isEmpty()){
                JOptionPane.showMessageDialog(this, "No has agregado ni platos ni bebidas ","Error",  JOptionPane.ERROR_MESSAGE);
         }else{
-            order = new Order(orderPlates, orderDrinks, 0, selectedTable);
+            order = new Order(orderPlates, orderDrinks, discount, selectedTable);
             model.addOrder(order);
             JOptionPane.showMessageDialog(this,"La Orden fue agregada correctamente","" , JOptionPane.INFORMATION_MESSAGE);
         }
@@ -365,6 +395,7 @@ public class WindowOrder extends javax.swing.JFrame {
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -428,5 +459,6 @@ public class WindowOrder extends javax.swing.JFrame {
     private javax.swing.JList lstOrderDrinks;
     private javax.swing.JList lstOrderPlates;
     private javax.swing.JList lstPlates;
+    private javax.swing.JTextField txtDiscount;
     // End of variables declaration//GEN-END:variables
 }

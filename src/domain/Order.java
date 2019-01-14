@@ -44,6 +44,14 @@ public class Order implements Serializable, Comparable{
         return date;
     }
 
+    public Table getTable() {
+        return table;
+    }
+
+    public void setTable(Table table) {
+        this.table = table;
+    }
+
     public void setDate(Date date) {
         this.date = date;
     }

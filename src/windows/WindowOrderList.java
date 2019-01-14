@@ -1,6 +1,7 @@
 package windows;
 
 import domain.Model;
+import domain.Order;
 import java.util.Collection;
 import java.util.Collections;
 import javax.swing.JFrame;
@@ -8,11 +9,11 @@ import javax.swing.JFrame;
 /**
  * @author Marco Fiorito
  */
-public class WindowOrderDetail extends javax.swing.JFrame {
+public class WindowOrderList extends javax.swing.JFrame {
     
     Model model;
     
-    public WindowOrderDetail(Model m) {
+    public WindowOrderList(Model m) {
         model = m;
         initComponents();
         
@@ -31,6 +32,15 @@ public class WindowOrderDetail extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         lstOrder = new javax.swing.JList();
         jPanel6 = new javax.swing.JPanel();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        btnBack = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new java.awt.GridLayout(1, 3));
@@ -50,12 +60,17 @@ public class WindowOrderDetail extends javax.swing.JFrame {
 
         jPanel2.add(jPanel4);
 
-        jPanel5.setLayout(new java.awt.GridLayout());
+        jPanel5.setLayout(new java.awt.GridLayout(1, 0));
 
         lstOrder.setModel(new javax.swing.AbstractListModel() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
             public Object getElementAt(int i) { return strings[i]; }
+        });
+        lstOrder.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lstOrderMouseClicked(evt);
+            }
         });
         jScrollPane1.setViewportView(lstOrder);
 
@@ -63,16 +78,26 @@ public class WindowOrderDetail extends javax.swing.JFrame {
 
         jPanel2.add(jPanel5);
 
-        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
-        jPanel6.setLayout(jPanel6Layout);
-        jPanel6Layout.setHorizontalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 224, Short.MAX_VALUE)
-        );
-        jPanel6Layout.setVerticalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 463, Short.MAX_VALUE)
-        );
+        jPanel6.setLayout(new java.awt.GridLayout(5, 0));
+
+        jPanel3.setLayout(new java.awt.GridLayout(3, 3));
+        jPanel3.add(jLabel3);
+        jPanel3.add(jLabel4);
+
+        btnBack.setText("Volver");
+        btnBack.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBackActionPerformed(evt);
+            }
+        });
+        jPanel3.add(btnBack);
+        jPanel3.add(jLabel5);
+        jPanel3.add(jLabel6);
+        jPanel3.add(jLabel17);
+        jPanel3.add(jLabel18);
+        jPanel3.add(jLabel19);
+
+        jPanel6.add(jPanel3);
 
         jPanel2.add(jPanel6);
 
@@ -81,9 +106,30 @@ public class WindowOrderDetail extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void lstOrderMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lstOrderMouseClicked
+        Order order = (Order)lstOrder.getSelectedValue();
+        WindowOrderDisplay orderDisplay = new WindowOrderDisplay(model, order);
+        orderDisplay.setVisible(true);
+    }//GEN-LAST:event_lstOrderMouseClicked
+
+    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
+        WindowMain wMain = new WindowMain(model, "");
+        wMain.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnBackActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnBack;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;

@@ -136,7 +136,7 @@ public class WindowMain extends javax.swing.JFrame {
             model.getListOfDrinks();
             model.getListOfPlates();
             model.getListOfPlates();
-            WindowOrder wOrder = new WindowOrder(model);
+            WindowOrder wOrder = new WindowOrder(model, null);
             wOrder.setVisible(true);
             this.dispose();              
         }catch(NullPointerException e){
@@ -150,7 +150,7 @@ public class WindowMain extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCloseActionPerformed
 
     private void btnListOfOrdersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListOfOrdersActionPerformed
-        WindowOrderDetail orderDetail = new WindowOrderDetail(model);
+        WindowOrderList orderDetail = new WindowOrderList(model);
         orderDetail.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnListOfOrdersActionPerformed
