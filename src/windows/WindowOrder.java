@@ -33,7 +33,7 @@ public class WindowOrder extends javax.swing.JFrame {
         
         jcbTables.setModel(new DefaultComboBoxModel(model.getListOfTables().toArray()));
         
-        if(order.equals(null)){
+        if(order == null){
             orderPlates = new ArrayList<>();
             orderDrinks = new ArrayList<>();
          
@@ -181,7 +181,7 @@ public class WindowOrder extends javax.swing.JFrame {
         jpanelMain.add(jPanel18);
         jpanelMain.add(jPanel19);
 
-        jPanel20.setLayout(new java.awt.GridLayout());
+        jPanel20.setLayout(new java.awt.GridLayout(1, 0));
 
         lstPlates.setModel(new javax.swing.AbstractListModel() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
@@ -216,7 +216,7 @@ public class WindowOrder extends javax.swing.JFrame {
 
         jpanelMain.add(jPanel21);
 
-        jPanel22.setLayout(new java.awt.GridLayout());
+        jPanel22.setLayout(new java.awt.GridLayout(1, 0));
 
         lstOrderPlates.setModel(new javax.swing.AbstractListModel() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
@@ -230,7 +230,7 @@ public class WindowOrder extends javax.swing.JFrame {
         jpanelMain.add(jPanel22);
         jpanelMain.add(jPanel23);
 
-        jPanel24.setLayout(new java.awt.GridLayout());
+        jPanel24.setLayout(new java.awt.GridLayout(1, 0));
 
         lstDrinks.setModel(new javax.swing.AbstractListModel() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
@@ -265,7 +265,7 @@ public class WindowOrder extends javax.swing.JFrame {
 
         jpanelMain.add(jPanel25);
 
-        jPanel26.setLayout(new java.awt.GridLayout());
+        jPanel26.setLayout(new java.awt.GridLayout(1, 0));
 
         lstOrderDrinks.setModel(new javax.swing.AbstractListModel() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
@@ -294,6 +294,8 @@ public class WindowOrder extends javax.swing.JFrame {
 
         jpanelMain.add(jPanel38);
 
+        jPanel39.setLayout(new java.awt.GridLayout(5, 0));
+
         jcbTables.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jPanel39.add(jcbTables);
 
@@ -304,6 +306,7 @@ public class WindowOrder extends javax.swing.JFrame {
 
         jpanelMain.add(jPanel40);
 
+        jPanel41.setLayout(new java.awt.GridLayout(5, 0));
         jPanel41.add(txtDiscount);
 
         jpanelMain.add(jPanel41);
@@ -365,7 +368,12 @@ public class WindowOrder extends javax.swing.JFrame {
         
         String table = jcbTables.getSelectedItem().toString();
         int number = Integer.parseInt(Character.toString(table.charAt(table.length() - 1)));
-        float discount = Float.parseFloat(txtDiscount.getText());
+        float discount = 0;
+        if(txtDiscount.getText().equals("")){
+            
+        }else{
+            discount = Float.parseFloat(txtDiscount.getText());
+        }
         
         Table selectedTable = null;
         Table currentTable;

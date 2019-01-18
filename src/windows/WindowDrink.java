@@ -2,6 +2,8 @@ package windows;
 
 import domain.Drink;
 import domain.Model;
+import java.util.Arrays;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
@@ -15,7 +17,9 @@ public class WindowDrink extends javax.swing.JFrame {
         model = m;
         initComponents();
         this.setExtendedState(JFrame.MAXIMIZED_BOTH);
-
+        
+        jcbSizes.setModel(new DefaultComboBoxModel(Drink.posibleSizes));
+        jcbTypes.setModel(new DefaultComboBoxModel(Drink.typePosibilities));
     }
 
     @SuppressWarnings("unchecked")
@@ -35,20 +39,22 @@ public class WindowDrink extends javax.swing.JFrame {
         btnBack = new javax.swing.JButton();
         jPanel10 = new javax.swing.JPanel();
         jPanel11 = new javax.swing.JPanel();
-        lblDescription = new javax.swing.JLabel();
+        lblDrink = new javax.swing.JLabel();
         jPanel12 = new javax.swing.JPanel();
-        txtDescription = new javax.swing.JTextField();
+        txtBrand = new javax.swing.JTextField();
         jPanel13 = new javax.swing.JPanel();
         jPanel14 = new javax.swing.JPanel();
+        jcbSizes = new javax.swing.JComboBox();
         jPanel15 = new javax.swing.JPanel();
+        lblLT = new javax.swing.JLabel();
         jPanel16 = new javax.swing.JPanel();
+        lblType = new javax.swing.JLabel();
         jPanel17 = new javax.swing.JPanel();
+        jcbTypes = new javax.swing.JComboBox();
         jPanel18 = new javax.swing.JPanel();
         jPanel19 = new javax.swing.JPanel();
         jPanel20 = new javax.swing.JPanel();
-        lblCost = new javax.swing.JLabel();
         jPanel21 = new javax.swing.JPanel();
-        txtCost = new javax.swing.JTextField();
         jPanel22 = new javax.swing.JPanel();
         jPanel23 = new javax.swing.JPanel();
         jPanel24 = new javax.swing.JPanel();
@@ -57,14 +63,18 @@ public class WindowDrink extends javax.swing.JFrame {
         jPanel27 = new javax.swing.JPanel();
         jPanel28 = new javax.swing.JPanel();
         jPanel29 = new javax.swing.JPanel();
+        lblDescription = new javax.swing.JLabel();
         jPanel30 = new javax.swing.JPanel();
+        txtDescription = new javax.swing.JTextField();
         jPanel31 = new javax.swing.JPanel();
         jPanel32 = new javax.swing.JPanel();
+        lblCost = new javax.swing.JLabel();
         jPanel33 = new javax.swing.JPanel();
+        txtCost = new javax.swing.JTextField();
         jPanel34 = new javax.swing.JPanel();
+        lblMoney = new javax.swing.JLabel();
         jPanel35 = new javax.swing.JPanel();
         jPanel36 = new javax.swing.JPanel();
-        btnAddDrink = new javax.swing.JButton();
         jPanel37 = new javax.swing.JPanel();
         jPanel38 = new javax.swing.JPanel();
         jPanel39 = new javax.swing.JPanel();
@@ -74,9 +84,10 @@ public class WindowDrink extends javax.swing.JFrame {
         jPanel43 = new javax.swing.JPanel();
         jPanel44 = new javax.swing.JPanel();
         jPanel45 = new javax.swing.JPanel();
+        btnAddDrink = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(new java.awt.GridLayout());
+        getContentPane().setLayout(new java.awt.GridLayout(1, 0));
 
         jPanelMain.setLayout(new java.awt.GridLayout(5, 9));
         jPanelMain.add(jPanel1);
@@ -101,57 +112,115 @@ public class WindowDrink extends javax.swing.JFrame {
 
         jPanel11.setLayout(new java.awt.GridLayout(5, 0));
 
-        lblDescription.setText("Descripción:");
-        jPanel11.add(lblDescription);
+        lblDrink.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblDrink.setText("Bebida:");
+        jPanel11.add(lblDrink);
 
         jPanelMain.add(jPanel11);
 
         jPanel12.setLayout(new java.awt.GridLayout(5, 0));
-        jPanel12.add(txtDescription);
+
+        txtBrand.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtBrandActionPerformed(evt);
+            }
+        });
+        jPanel12.add(txtBrand);
 
         jPanelMain.add(jPanel12);
+
+        jPanel13.setLayout(new java.awt.GridLayout(5, 0));
         jPanelMain.add(jPanel13);
+
+        jPanel14.setLayout(new java.awt.GridLayout(5, 5));
+
+        jcbSizes.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jPanel14.add(jcbSizes);
+
         jPanelMain.add(jPanel14);
+
+        jPanel15.setLayout(new java.awt.GridLayout(5, 0));
+
+        lblLT.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lblLT.setText("LT");
+        jPanel15.add(lblLT);
+
         jPanelMain.add(jPanel15);
+
+        jPanel16.setLayout(new java.awt.GridLayout());
+
+        lblType.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblType.setText("Tipo:");
+        lblType.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        jPanel16.add(lblType);
+
         jPanelMain.add(jPanel16);
+
+        jPanel17.setLayout(new java.awt.GridLayout(5, 0));
+
+        jcbTypes.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jPanel17.add(jcbTypes);
+
         jPanelMain.add(jPanel17);
         jPanelMain.add(jPanel18);
         jPanelMain.add(jPanel19);
 
         jPanel20.setLayout(new java.awt.GridLayout(5, 0));
-
-        lblCost.setText("Costo:");
-        jPanel20.add(lblCost);
-
         jPanelMain.add(jPanel20);
 
         jPanel21.setLayout(new java.awt.GridLayout(5, 0));
-        jPanel21.add(txtCost);
-
         jPanelMain.add(jPanel21);
+
+        jPanel22.setLayout(new java.awt.GridLayout(5, 0));
         jPanelMain.add(jPanel22);
+
+        jPanel23.setLayout(new java.awt.GridLayout(5, 0));
         jPanelMain.add(jPanel23);
+
+        jPanel24.setLayout(new java.awt.GridLayout(5, 0));
         jPanelMain.add(jPanel24);
         jPanelMain.add(jPanel25);
         jPanelMain.add(jPanel26);
         jPanelMain.add(jPanel27);
         jPanelMain.add(jPanel28);
+
+        jPanel29.setLayout(new java.awt.GridLayout(5, 0));
+
+        lblDescription.setText("Descripción (opcional):");
+        jPanel29.add(lblDescription);
+
         jPanelMain.add(jPanel29);
+
+        jPanel30.setLayout(new java.awt.GridLayout(5, 0));
+        jPanel30.add(txtDescription);
+
         jPanelMain.add(jPanel30);
+
+        jPanel31.setLayout(new java.awt.GridLayout(1, 0));
         jPanelMain.add(jPanel31);
+
+        jPanel32.setLayout(new java.awt.GridLayout(5, 0));
+
+        lblCost.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblCost.setText("Costo:");
+        jPanel32.add(lblCost);
+
         jPanelMain.add(jPanel32);
+
+        jPanel33.setLayout(new java.awt.GridLayout(5, 0));
+        jPanel33.add(txtCost);
+
         jPanelMain.add(jPanel33);
+
+        jPanel34.setLayout(new java.awt.GridLayout(5, 5));
+
+        lblMoney.setText("$");
+        jPanel34.add(lblMoney);
+
         jPanelMain.add(jPanel34);
+
+        jPanel35.setLayout(new java.awt.GridLayout(5, 5));
         jPanelMain.add(jPanel35);
-
-        btnAddDrink.setText("Agregar");
-        btnAddDrink.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAddDrinkActionPerformed(evt);
-            }
-        });
-        jPanel36.add(btnAddDrink);
-
         jPanelMain.add(jPanel36);
         jPanelMain.add(jPanel37);
         jPanelMain.add(jPanel38);
@@ -161,6 +230,15 @@ public class WindowDrink extends javax.swing.JFrame {
         jPanelMain.add(jPanel42);
         jPanelMain.add(jPanel43);
         jPanelMain.add(jPanel44);
+
+        btnAddDrink.setText("Agregar");
+        btnAddDrink.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAddDrinkActionPerformed(evt);
+            }
+        });
+        jPanel45.add(btnAddDrink);
+
         jPanelMain.add(jPanel45);
 
         getContentPane().add(jPanelMain);
@@ -170,11 +248,19 @@ public class WindowDrink extends javax.swing.JFrame {
 
     private void btnAddDrinkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddDrinkActionPerformed
         String description = txtDescription.getText();
+        String size = jcbSizes.getSelectedItem().toString();
+        String brand = txtBrand.getText();
+        String type = jcbTypes.getSelectedItem().toString();
+        
         try{
               int cost = Integer.parseInt( txtCost.getText());
-              Drink drink = new Drink(cost, description);
-              model.addDrink(drink);
-             JOptionPane.showMessageDialog(this,"La bebida fue agregada correctamente","" , JOptionPane.INFORMATION_MESSAGE);
+              if(cost != 0 && !brand.trim().isEmpty()){
+                Drink drink = new Drink(cost, description,size, brand, type);
+                model.addDrink(drink);
+                JOptionPane.showMessageDialog(this,"La bebida fue agregada correctamente","" , JOptionPane.INFORMATION_MESSAGE);
+              }else{
+                JOptionPane.showMessageDialog(this, "Problema con el campo costo y/o bebida ","Debes ingresar una bebida y un costo",  JOptionPane.ERROR_MESSAGE);
+              }
         }catch(NumberFormatException e){
                JOptionPane.showMessageDialog(this, "Problema con el campo costo ","Debes ingresar números",  JOptionPane.ERROR_MESSAGE);
         }
@@ -185,6 +271,10 @@ public class WindowDrink extends javax.swing.JFrame {
         wMain.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnBackActionPerformed
+
+    private void txtBrandActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBrandActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtBrandActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -236,8 +326,15 @@ public class WindowDrink extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JPanel jPanelMain;
+    private javax.swing.JComboBox jcbSizes;
+    private javax.swing.JComboBox jcbTypes;
     private javax.swing.JLabel lblCost;
     private javax.swing.JLabel lblDescription;
+    private javax.swing.JLabel lblDrink;
+    private javax.swing.JLabel lblLT;
+    private javax.swing.JLabel lblMoney;
+    private javax.swing.JLabel lblType;
+    private javax.swing.JTextField txtBrand;
     private javax.swing.JTextField txtCost;
     private javax.swing.JTextField txtDescription;
     // End of variables declaration//GEN-END:variables

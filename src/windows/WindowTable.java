@@ -24,9 +24,9 @@ public class WindowTable extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanelMain = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         lblRange = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -36,19 +36,27 @@ public class WindowTable extends javax.swing.JFrame {
         jLabel17 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
+        jLabel24 = new javax.swing.JLabel();
+        jLabel25 = new javax.swing.JLabel();
+        jLabel26 = new javax.swing.JLabel();
+        jLabel27 = new javax.swing.JLabel();
+        jLabel28 = new javax.swing.JLabel();
+        jPanel5 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
         txtInit = new javax.swing.JTextField();
         txtFinal = new javax.swing.JTextField();
-        jPanel5 = new javax.swing.JPanel();
         jPanel6 = new javax.swing.JPanel();
         jPanel7 = new javax.swing.JPanel();
         jPanel8 = new javax.swing.JPanel();
         jPanel9 = new javax.swing.JPanel();
-        btnAdd = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
@@ -57,6 +65,13 @@ public class WindowTable extends javax.swing.JFrame {
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
+        jLabel29 = new javax.swing.JLabel();
+        jLabel30 = new javax.swing.JLabel();
+        jLabel31 = new javax.swing.JLabel();
+        jLabel32 = new javax.swing.JLabel();
+        jLabel33 = new javax.swing.JLabel();
+        jLabel34 = new javax.swing.JLabel();
+        btnAdd = new javax.swing.JButton();
         jPanel10 = new javax.swing.JPanel();
         jPanel11 = new javax.swing.JPanel();
         jPanel12 = new javax.swing.JPanel();
@@ -68,6 +83,7 @@ public class WindowTable extends javax.swing.JFrame {
         getContentPane().setLayout(new java.awt.GridLayout(1, 0));
 
         jPanelMain.setLayout(new java.awt.GridLayout(5, 3));
+        jPanelMain.add(jPanel2);
 
         jPanel1.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 5, 40));
 
@@ -75,9 +91,8 @@ public class WindowTable extends javax.swing.JFrame {
         jPanel1.add(lblRange);
 
         jPanelMain.add(jPanel1);
-        jPanelMain.add(jPanel2);
 
-        jPanel3.setLayout(new java.awt.GridLayout(3, 3));
+        jPanel3.setLayout(new java.awt.GridLayout(5, 5));
         jPanel3.add(jLabel3);
         jPanel3.add(jLabel4);
 
@@ -93,10 +108,16 @@ public class WindowTable extends javax.swing.JFrame {
         jPanel3.add(jLabel17);
         jPanel3.add(jLabel18);
         jPanel3.add(jLabel19);
+        jPanel3.add(jLabel24);
+        jPanel3.add(jLabel25);
+        jPanel3.add(jLabel26);
+        jPanel3.add(jLabel27);
+        jPanel3.add(jLabel28);
 
         jPanelMain.add(jPanel3);
+        jPanelMain.add(jPanel5);
 
-        jPanel4.setLayout(new java.awt.GridLayout(3, 3));
+        jPanel4.setLayout(new java.awt.GridLayout(5, 3));
 
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Inicial");
@@ -107,6 +128,14 @@ public class WindowTable extends javax.swing.JFrame {
         jPanel4.add(jLabel1);
         jPanel4.add(jLabel11);
         jPanel4.add(jLabel12);
+
+        jLabel20.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jPanel4.add(jLabel20);
+
+        jLabel21.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jPanel4.add(jLabel21);
+        jPanel4.add(jLabel22);
+        jPanel4.add(jLabel23);
 
         txtInit.setText(" ");
         txtInit.addActionListener(new java.awt.event.ActionListener() {
@@ -125,20 +154,11 @@ public class WindowTable extends javax.swing.JFrame {
         jPanel4.add(txtFinal);
 
         jPanelMain.add(jPanel4);
-        jPanelMain.add(jPanel5);
         jPanelMain.add(jPanel6);
         jPanelMain.add(jPanel7);
         jPanelMain.add(jPanel8);
 
-        jPanel9.setLayout(new java.awt.GridLayout(3, 3));
-
-        btnAdd.setText("Agregar");
-        btnAdd.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAddActionPerformed(evt);
-            }
-        });
-        jPanel9.add(btnAdd);
+        jPanel9.setLayout(new java.awt.GridLayout(5, 5));
         jPanel9.add(jLabel7);
         jPanel9.add(jLabel9);
         jPanel9.add(jLabel10);
@@ -147,6 +167,20 @@ public class WindowTable extends javax.swing.JFrame {
         jPanel9.add(jLabel14);
         jPanel9.add(jLabel15);
         jPanel9.add(jLabel16);
+        jPanel9.add(jLabel29);
+        jPanel9.add(jLabel30);
+        jPanel9.add(jLabel31);
+        jPanel9.add(jLabel32);
+        jPanel9.add(jLabel33);
+        jPanel9.add(jLabel34);
+
+        btnAdd.setText("Agregar");
+        btnAdd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAddActionPerformed(evt);
+            }
+        });
+        jPanel9.add(btnAdd);
 
         jPanelMain.add(jPanel9);
         jPanelMain.add(jPanel10);
@@ -216,7 +250,22 @@ public class WindowTable extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;

@@ -135,7 +135,7 @@ public class WindowMain extends javax.swing.JFrame {
         try{
             model.getListOfDrinks();
             model.getListOfPlates();
-            model.getListOfPlates();
+            model.getListOfTables();
             WindowOrder wOrder = new WindowOrder(model, null);
             wOrder.setVisible(true);
             this.dispose();              
