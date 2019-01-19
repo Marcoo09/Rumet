@@ -50,7 +50,7 @@ public class WindowBoxOrderDisplay extends javax.swing.JFrame {
          if(discount == 0){
              total = subtotal;
          }else{
-             total = subtotal - (subtotal * (int)(discount / 10));
+             total = subtotal - (int)(subtotal * (discount / 100));
          }
          
          txtSubTotal.setText("" + subtotal);

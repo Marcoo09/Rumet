@@ -184,6 +184,9 @@ public class WindowClient extends javax.swing.JFrame {
         String rut = txtRut.getText();
         Client client = new Client(name, rut);
         model.addClient(client);
+        txtName.setText("");
+        txtRut.setText("");
+        client = null;
         JOptionPane.showMessageDialog(this,"", "El plato fue agregado correctamente", 0);
     }//GEN-LAST:event_btnAddDrinkActionPerformed
 

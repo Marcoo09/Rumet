@@ -218,6 +218,8 @@ public class WindowTable extends javax.swing.JFrame {
                         model.addTable(table);
                         init++;
                     }
+                    txtFinal.setText("");
+                    txtInit.setText("");
                     JOptionPane.showMessageDialog(this, "Las mesas fueron agregadas correctamente","", JOptionPane.INFORMATION_MESSAGE);
                 }else{
                     JOptionPane.showMessageDialog(this, "Rango inválido","Error", JOptionPane.ERROR_MESSAGE);

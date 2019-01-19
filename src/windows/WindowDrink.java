@@ -257,6 +257,12 @@ public class WindowDrink extends javax.swing.JFrame {
               if(cost != 0 && !brand.trim().isEmpty()){
                 Drink drink = new Drink(cost, description,size, brand, type);
                 model.addDrink(drink);
+                jcbSizes.setSelectedIndex(0);
+                jcbTypes.setSelectedIndex(0);
+                txtBrand.setText("");
+                txtCost.setText("");
+                txtDescription.setText("");
+                drink = null;
                 JOptionPane.showMessageDialog(this,"La bebida fue agregada correctamente","" , JOptionPane.INFORMATION_MESSAGE);
               }else{
                 JOptionPane.showMessageDialog(this, "Problema con el campo costo y/o bebida ","Debes ingresar una bebida y un costo",  JOptionPane.ERROR_MESSAGE);

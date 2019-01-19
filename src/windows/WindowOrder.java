@@ -119,6 +119,7 @@ public class WindowOrder extends javax.swing.JFrame {
         jPanel41 = new javax.swing.JPanel();
         txtDiscount = new javax.swing.JTextField();
         jPanel42 = new javax.swing.JPanel();
+        jLabel11 = new javax.swing.JLabel();
         jPanel43 = new javax.swing.JPanel();
         jPanel44 = new javax.swing.JPanel();
         btnAdd = new javax.swing.JButton();
@@ -310,6 +311,14 @@ public class WindowOrder extends javax.swing.JFrame {
         jPanel41.add(txtDiscount);
 
         jpanelMain.add(jPanel41);
+
+        jPanel42.setLayout(new java.awt.GridLayout());
+
+        jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel11.setText("%");
+        jLabel11.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        jPanel42.add(jLabel11);
+
         jpanelMain.add(jPanel42);
         jpanelMain.add(jPanel43);
 
@@ -369,9 +378,7 @@ public class WindowOrder extends javax.swing.JFrame {
         String table = jcbTables.getSelectedItem().toString();
         int number = Integer.parseInt(Character.toString(table.charAt(table.length() - 1)));
         float discount = 0;
-        if(txtDiscount.getText().equals("")){
-            
-        }else{
+        if(!txtDiscount.getText().equals("")){
             discount = Float.parseFloat(txtDiscount.getText());
         }
         
@@ -390,6 +397,13 @@ public class WindowOrder extends javax.swing.JFrame {
         }else{
             order = new Order(orderPlates, orderDrinks, discount, selectedTable);
             model.addOrder(order);
+            jcbTables.setSelectedIndex(0);
+            txtDiscount.setText("");
+            orderDrinks = new ArrayList<>();
+            orderPlates = new ArrayList<>();
+            lstOrderDrinks.setListData(orderDrinks.toArray());
+            lstOrderPlates.setListData(orderPlates.toArray());
+            order = null;
             JOptionPane.showMessageDialog(this,"La Orden fue agregada correctamente","" , JOptionPane.INFORMATION_MESSAGE);
         }
         
@@ -404,6 +418,7 @@ public class WindowOrder extends javax.swing.JFrame {
     private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

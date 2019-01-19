@@ -6,7 +6,7 @@ package domain;
 public class Drink extends KitchenPossibilities{
     
     private String brand;
-    public static String[] posibleSizes = {"0.250","0.300","0.500","0.700","1.0","1.25","1.5","2.25"};
+    public static String[] posibleSizes = {"","0.250","0.300","0.500","0.700","1.0","1.25","1.5","2.25"};
     public static String[] typePosibilities = {"","Común","Light"};
     private String type;
     private String size;

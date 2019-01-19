@@ -116,11 +116,6 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCompletePlateActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="btnChangePlate">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Modificar Plato"/>
-              </Properties>
-            </Component>
           </SubComponents>
         </Container>
       </SubComponents>

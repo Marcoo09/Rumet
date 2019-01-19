@@ -457,7 +457,19 @@
         </Container>
         <Container class="javax.swing.JPanel" name="jPanel42">
 
-          <Layout class="org.netbeans.modules.form.compat2.layouts.DesignFlowLayout"/>
+          <Layout class="org.netbeans.modules.form.compat2.layouts.DesignGridLayout">
+            <Property name="columns" type="int" value="0"/>
+            <Property name="rows" type="int" value="1"/>
+          </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JLabel" name="jLabel11">
+              <Properties>
+                <Property name="horizontalAlignment" type="int" value="2"/>
+                <Property name="text" type="java.lang.String" value="%"/>
+                <Property name="verticalAlignment" type="int" value="1"/>
+              </Properties>
+            </Component>
+          </SubComponents>
         </Container>
         <Container class="javax.swing.JPanel" name="jPanel43">
 

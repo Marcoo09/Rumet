@@ -303,6 +303,13 @@ public class WindowPlate extends javax.swing.JFrame {
                 int cost = Integer.parseInt( txtCost.getText());
                 Plate plate = new Plate(cost, description,mainPlate,secondaryPlate,sauce);
                 model.addPlate(plate);
+                plate = null;
+                txtCost.setText("");
+                txtDescription.setText("");
+                txtMainPlate.setText("");
+                txtSauce.setText("");
+                txtSecondaryPlate.setText("");
+
                 JOptionPane.showMessageDialog(this,"El plato fue agregado correctamente","" , JOptionPane.INFORMATION_MESSAGE);
             }catch(NumberFormatException e){
                 JOptionPane.showMessageDialog(this, "Problema con el campo costo'","Debes ingresar números",  JOptionPane.ERROR_MESSAGE);

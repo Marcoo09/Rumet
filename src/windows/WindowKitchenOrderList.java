@@ -44,7 +44,6 @@ public class WindowKitchenOrderList extends javax.swing.JFrame implements Observ
         jLabel18 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
         btnCompletePlate = new javax.swing.JButton();
-        btnChangePlate = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new java.awt.GridLayout());
@@ -98,9 +97,6 @@ public class WindowKitchenOrderList extends javax.swing.JFrame implements Observ
         });
         jPanel6.add(btnCompletePlate);
 
-        btnChangePlate.setText("Modificar Plato");
-        jPanel6.add(btnChangePlate);
-
         jPanel2.add(jPanel6);
 
         getContentPane().add(jPanel2);
@@ -129,7 +125,6 @@ public class WindowKitchenOrderList extends javax.swing.JFrame implements Observ
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBack;
-    private javax.swing.JButton btnChangePlate;
     private javax.swing.JButton btnCompletePlate;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
