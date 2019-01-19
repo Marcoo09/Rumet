@@ -3,18 +3,21 @@ package domain;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Observable;
 
 /**
  * @author Marco Fiorito
  */
-public class Model implements Serializable{
+public class Model extends Observable implements Serializable{
 
     private ArrayList<Drink> listOfDrinks;
     private ArrayList<Plate> listOfPlates;
     private ArrayList<Order> listOfOrders;
     private ArrayList<Client> listOfClients;
     private ArrayList<Table> listOfTables;
-
+    
+    private String typeOfUser;
+    
     public  static String account = "rumet";
     public static String password = "facil12.";
     
@@ -36,6 +39,8 @@ public class Model implements Serializable{
     public void addOrder(Order parmOrder) {
         this.getSortedListOfOrders().add(parmOrder);
         Collections.sort(listOfOrders);
+        this.setChanged();
+        this.notifyObservers();
     }
     
     public void addClient(Client parmClient) {
@@ -65,5 +70,26 @@ public class Model implements Serializable{
     public ArrayList<Table> getListOfTables() {
         return listOfTables;
     }
+
+    public String getTypeOfUser() {
+        return typeOfUser;
+    }
+
+    public void setTypeOfUser(String typeOfUser) {
+        this.typeOfUser = typeOfUser;
+    }
     
+    public ArrayList<Plate> getListOfOrderPlates(){
+        ArrayList<Plate> returnedArray = new ArrayList<>();
+        
+        for(int i = 0; i < this.getSortedListOfOrders().size(); i++){
+            Order currentOrder = this.getSortedListOfOrders().get(i);
+            for(int j = 0; j < currentOrder.getListOfPlates().size(); j++){
+                Plate currenPlate = currentOrder.getListOfPlates().get(j);
+                returnedArray.add(currenPlate);
+            }
+        }
+        
+        return returnedArray;
+    }
 }

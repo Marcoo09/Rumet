@@ -357,7 +357,7 @@ public class WindowOrder extends javax.swing.JFrame {
         if(isAnUpdate){
             this.dispose();
         }else{
-            WindowMain wMain = new WindowMain(model, "");
+            WindowMain wMain = new WindowMain(model);
             wMain.setVisible(true);
             this.dispose();            
         }

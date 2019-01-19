@@ -14,7 +14,7 @@ import javax.swing.JFrame;
 /**
  * @author Marco Fiorito
  */
-public class WindowOrderDisplay extends javax.swing.JFrame {
+public class WindowBoxOrderDisplay extends javax.swing.JFrame {
     private Model model;
     private Order order;
     private ArrayList<KitchenPossibilities> listOfKitchenPossibilities;
@@ -22,7 +22,7 @@ public class WindowOrderDisplay extends javax.swing.JFrame {
     private float discount = 0;
     private int total = 0;
     
-    public WindowOrderDisplay(Model m, Order o) {
+    public WindowBoxOrderDisplay(Model m, Order o) {
         model = m;
         order = o;
         ArrayList<Plate> plates = order.getListOfPlates();
@@ -31,6 +31,7 @@ public class WindowOrderDisplay extends javax.swing.JFrame {
         discount = order.getDiscount();
         
         initComponents();
+        
         int screenWidth = Toolkit.getDefaultToolkit().getScreenSize().width;
         int screenHeight = Toolkit.getDefaultToolkit().getScreenSize().height;
         Rectangle winSize = GraphicsEnvironment.getLocalGraphicsEnvironment().getMaximumWindowBounds();
@@ -113,7 +114,7 @@ public class WindowOrderDisplay extends javax.swing.JFrame {
 
         jPanel2.setLayout(new java.awt.GridLayout(1, 2));
 
-        jPanel5.setLayout(new java.awt.GridLayout());
+        jPanel5.setLayout(new java.awt.GridLayout(1, 0));
 
         lstPlatesAndDrinks.setModel(new javax.swing.AbstractListModel() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
@@ -168,11 +169,11 @@ public class WindowOrderDisplay extends javax.swing.JFrame {
         jPanel7.setLayout(jPanel7Layout);
         jPanel7Layout.setHorizontalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 200, Short.MAX_VALUE)
+            .addGap(0, 201, Short.MAX_VALUE)
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 230, Short.MAX_VALUE)
+            .addGap(0, 320, Short.MAX_VALUE)
         );
 
         jPanel3.add(jPanel7);

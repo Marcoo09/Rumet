@@ -4,17 +4,20 @@ import domain.Model;
 import domain.Order;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.Observable;
+import java.util.Observer;
 import javax.swing.JFrame;
 
 /**
  * @author Marco Fiorito
  */
-public class WindowOrderList extends javax.swing.JFrame {
+public class WindowBoxOrderList extends javax.swing.JFrame implements Observer {
     
     Model model;
     
-    public WindowOrderList(Model m) {
+    public WindowBoxOrderList(Model m) {
         model = m;
+        model.addObserver(this);
         initComponents();
         
         this.setExtendedState(JFrame.MAXIMIZED_BOTH);
@@ -108,12 +111,12 @@ public class WindowOrderList extends javax.swing.JFrame {
 
     private void lstOrderMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lstOrderMouseClicked
         Order order = (Order)lstOrder.getSelectedValue();
-        WindowOrderDisplay orderDisplay = new WindowOrderDisplay(model, order);
-        orderDisplay.setVisible(true);
+        WindowBoxOrderDisplay wOrderDisplay = new WindowBoxOrderDisplay(model, order);
+        wOrderDisplay.setVisible(true);
     }//GEN-LAST:event_lstOrderMouseClicked
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
-        WindowMain wMain = new WindowMain(model, "");
+        WindowMain wMain = new WindowMain(model);
         wMain.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnBackActionPerformed
@@ -136,4 +139,9 @@ public class WindowOrderList extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JList lstOrder;
     // End of variables declaration//GEN-END:variables
+
+    @Override
+    public void update(Observable o, Object o1) {
+        lstOrder.setListData(model.getSortedListOfOrders().toArray());
+    }
 }

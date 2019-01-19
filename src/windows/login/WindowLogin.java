@@ -190,10 +190,12 @@ public class WindowLogin extends javax.swing.JFrame {
         if(jrbBox.isSelected() || jrbCook.isSelected()){
             if(user.trim().equals(Model.account) && password.equals(Model.password)){
                         if(jrbBox.isSelected()){
-                            main = new WindowMain(model, "caja");
+                            model.setTypeOfUser("caja");
+                            main = new WindowMain(model);
                         }
                         else if(jrbCook.isSelected()){
-                            main = new WindowMain(model, "cocina");
+                            model.setTypeOfUser("cocina");
+                            main = new WindowMain(model);
                         }
                         main.setVisible(true);
                         this.dispose();

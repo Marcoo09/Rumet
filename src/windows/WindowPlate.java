@@ -288,7 +288,7 @@ public class WindowPlate extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
-        WindowMain wMain = new WindowMain(model, "");
+        WindowMain wMain = new WindowMain(model);
         wMain.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnBackActionPerformed

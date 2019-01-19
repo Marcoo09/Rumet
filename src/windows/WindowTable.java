@@ -229,7 +229,7 @@ public class WindowTable extends javax.swing.JFrame {
     }//GEN-LAST:event_btnAddActionPerformed
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
-        WindowMain wMain = new WindowMain(model, "");
+        WindowMain wMain = new WindowMain(model);
         wMain.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnBackActionPerformed

@@ -13,10 +13,10 @@ public class WindowMain extends javax.swing.JFrame {
     
     private Model model;
     
-    public WindowMain(Model m, String typeOfUser) {
+    public WindowMain(Model m) {
         model = m;
         initComponents();
-        
+
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         this.setExtendedState(JFrame.MAXIMIZED_BOTH);
         
@@ -26,7 +26,7 @@ public class WindowMain extends javax.swing.JFrame {
         
         jpanelButtons.setPreferredSize(jpanel);
         
-        if(typeOfUser.equals("cocina")){
+        if(model.getTypeOfUser().equals("cocina")){
             btnDrink.setVisible(false);
             btnTable.setVisible(false);
             btnPlate.setVisible(false);
@@ -126,8 +126,8 @@ public class WindowMain extends javax.swing.JFrame {
 
     private void btnTableActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTableActionPerformed
        WindowTable wTable = new WindowTable(model);
-        wTable.setVisible(true);
-        this.dispose();
+       wTable.setVisible(true);
+       this.dispose();
     }//GEN-LAST:event_btnTableActionPerformed
 
     private void btnOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOrderActionPerformed
@@ -150,8 +150,13 @@ public class WindowMain extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCloseActionPerformed
 
     private void btnListOfOrdersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListOfOrdersActionPerformed
-        WindowOrderList orderDetail = new WindowOrderList(model);
-        orderDetail.setVisible(true);
+        if(model.getTypeOfUser().equals("cocina")){
+            WindowKitchenOrderList orderDetail = new WindowKitchenOrderList(model);
+            orderDetail.setVisible(true);
+        }else{
+            WindowBoxOrderList orderDetail = new WindowBoxOrderList(model);
+            orderDetail.setVisible(true);            
+        }
         this.dispose();
     }//GEN-LAST:event_btnListOfOrdersActionPerformed
 
