@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
+import test.addingData;
 import utils.Utils;
 import windows.login.WindowLogin;
 
@@ -20,6 +21,10 @@ public class Rumet {
     
     public static void main(String[] args) throws FileNotFoundException, ClassNotFoundException, InstantiationException, IllegalAccessException, UnsupportedLookAndFeelException, IOException {
         model = new Model();
+        /*Dummy data*/
+        addingData testClass = new addingData(model);
+        testClass.addingInitialApplicationData();
+        /*Dummy data*/
         
         UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
         

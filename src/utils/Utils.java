@@ -32,7 +32,7 @@ public class Utils {
         
         try {
             stream.writeObject(model);
-             stream.flush();
+            stream.flush();
             stream.close();
         } catch (IOException ex) {
             Logger.getLogger(Model.class.getName()).log(Level.SEVERE, null, ex);

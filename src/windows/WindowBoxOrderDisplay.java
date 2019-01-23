@@ -10,6 +10,7 @@ import java.awt.Rectangle;
 import java.awt.Toolkit;
 import java.util.ArrayList;
 import javax.swing.JFrame;
+import printHandler.PdfHandler;
 
 /**
  * @author Marco Fiorito
@@ -207,6 +208,11 @@ public class WindowBoxOrderDisplay extends javax.swing.JFrame {
         jPanel8.add(btnAddPlatesOrDinrks);
 
         btnImpress.setText("Imprimir");
+        btnImpress.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnImpressActionPerformed(evt);
+            }
+        });
         jPanel8.add(btnImpress);
 
         jPanel3.add(jPanel8);
@@ -220,6 +226,17 @@ public class WindowBoxOrderDisplay extends javax.swing.JFrame {
         WindowOrder modifiedOrder = new WindowOrder(model, order);
         modifiedOrder.setVisible(true);
     }//GEN-LAST:event_btnAddPlatesOrDinrksActionPerformed
+
+    private void btnImpressActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnImpressActionPerformed
+        model.addFinalizedorder(order);
+        model.removeOrder(order);
+        
+        /*Codigo imprimir*/
+        PdfHandler pdfHandler = new PdfHandler();
+        pdfHandler.createSimplePdf(order, subtotal, discount, total);
+        
+        this.dispose();
+    }//GEN-LAST:event_btnImpressActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAddPlatesOrDinrks;

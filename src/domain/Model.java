@@ -15,6 +15,7 @@ public class Model extends Observable implements Serializable{
     private ArrayList<Order> listOfOrders;
     private ArrayList<Client> listOfClients;
     private ArrayList<Table> listOfTables;
+    private ArrayList<Order> listOfFinalizedOrders;
     
     private String typeOfUser;
     
@@ -27,6 +28,7 @@ public class Model extends Observable implements Serializable{
         listOfOrders = new ArrayList<>();
         listOfPlates = new ArrayList<>();
         listOfTables = new ArrayList<>();
+        listOfFinalizedOrders = new ArrayList<>();
     }
     public void addDrink(Drink parmDrink) {
         this.getListOfDrinks().add(parmDrink);
@@ -41,6 +43,12 @@ public class Model extends Observable implements Serializable{
         Collections.sort(listOfOrders);
         this.setChanged();
         this.notifyObservers();
+    }
+    
+    public void removeOrder(Order parmOrder){
+        this.getSortedListOfOrders().remove(parmOrder);
+        this.setChanged();
+        this.notifyObservers();        
     }
     
     public void addClient(Client parmClient) {
@@ -77,6 +85,10 @@ public class Model extends Observable implements Serializable{
 
     public void setTypeOfUser(String typeOfUser) {
         this.typeOfUser = typeOfUser;
+    }
+
+    public void addFinalizedorder(Order finalizedOrder) {
+        this.listOfFinalizedOrders.add(finalizedOrder);
     }
     
     public ArrayList<Plate> getListOfOrderPlates(){
