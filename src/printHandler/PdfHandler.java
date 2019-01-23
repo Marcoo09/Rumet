@@ -29,7 +29,7 @@ import java.util.logging.Logger;
  */
 public class PdfHandler {
     
-    public void createSimplePdf(Order order, int subtotal, float discount, int total){
+    public Document createSimplePdf(Order order, int subtotal, float discount, int total){
         ArrayList<Plate> listOfPlates = order.getListOfPlates();
         ArrayList<Drink> listOfDrinks = order.getListOfDrinks();
         Date date = order.getDate();
@@ -147,6 +147,8 @@ public class PdfHandler {
         } catch (DocumentException ex) {
             Logger.getLogger(PdfHandler.class.getName()).log(Level.SEVERE, null, ex);
         }
+        
+        return document;
     }
     
 }

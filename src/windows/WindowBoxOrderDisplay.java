@@ -1,5 +1,6 @@
 package windows;
 
+import com.itextpdf.text.Document;
 import domain.Drink;
 import domain.KitchenPossibilities;
 import domain.Model;
@@ -8,9 +9,14 @@ import domain.Plate;
 import java.awt.GraphicsEnvironment;
 import java.awt.Rectangle;
 import java.awt.Toolkit;
+import java.awt.print.PrinterException;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.print.PrintException;
 import javax.swing.JFrame;
 import printHandler.PdfHandler;
+import printHandler.PrinterHandler;
 
 /**
  * @author Marco Fiorito
@@ -233,7 +239,16 @@ public class WindowBoxOrderDisplay extends javax.swing.JFrame {
         
         /*Codigo imprimir*/
         PdfHandler pdfHandler = new PdfHandler();
-        pdfHandler.createSimplePdf(order, subtotal, discount, total);
+        Document doc = pdfHandler.createSimplePdf(order, subtotal, discount, total);
+        
+        PrinterHandler printerHandler = new PrinterHandler();
+        try {
+            printerHandler.sendToPrinter(doc);
+        } catch (PrinterException ex) {
+            Logger.getLogger(WindowBoxOrderDisplay.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (PrintException ex) {
+            Logger.getLogger(WindowBoxOrderDisplay.class.getName()).log(Level.SEVERE, null, ex);
+        }
         
         this.dispose();
     }//GEN-LAST:event_btnImpressActionPerformed
