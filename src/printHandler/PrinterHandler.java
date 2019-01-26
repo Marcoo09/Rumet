@@ -6,7 +6,6 @@ import java.io.FileNotFoundException;
 import javax.print.*;
 import javax.print.attribute.HashPrintRequestAttributeSet;
 import javax.print.attribute.PrintRequestAttributeSet;
-import com.itextpdf.text.Document;
 import javax.print.attribute.DocAttributeSet;
 import javax.print.attribute.HashDocAttributeSet;
 
@@ -15,19 +14,7 @@ import javax.print.attribute.HashDocAttributeSet;
  */
 public class PrinterHandler {
     
-    public void sendToPrinter(Document document) throws PrinterException, PrintException{
-        /*DocFlavor flavor = DocFlavor.SERVICE_FORMATTED.PAGEABLE;
-        PrintRequestAttributeSet patts = new HashPrintRequestAttributeSet();
-        patts.add(Sides.ONE_SIDED);
-        PrintService[] ps = PrintServiceLookup.lookupPrintServices(flavor, patts);
-        if (ps.length == 0) {
-            throw new IllegalStateException("No Printer found");
-        }
-        PrinterJob job = PrinterJob.getPrinterJob();
-        job.setPrintService(ps[0]);
-    
-        DocPrintJob printJob = job.getPrintService().createPrintJob();
-        printJob.print((Doc) document, new HashPrintRequestAttributeSet());*/
+    public void sendToPrinter() throws PrinterException, PrintException{
         FileInputStream psStream = null;  
         try {  
             psStream = new FileInputStream("account.pdf");
@@ -50,4 +37,5 @@ public class PrinterHandler {
             pe.printStackTrace();
         }  
     }
+
 }
