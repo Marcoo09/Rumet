@@ -10,6 +10,7 @@ import java.awt.GraphicsEnvironment;
 import java.awt.Rectangle;
 import java.awt.Toolkit;
 import java.awt.print.PrinterException;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -387,14 +388,13 @@ public class WindowBoxOrderDisplay extends javax.swing.JFrame {
                 pdfHandler.createRutPdf(order, subtotal, discount, total, rut);
             }else{
                 pdfHandler.createSimplePdf(order, subtotal, discount, total);
-            }      
+            }
             try {
+                this.setVisible(false);
                 printerHandler.sendToPrinter();
-            } catch (PrinterException ex) {
+            } catch (IOException ex) {
                 Logger.getLogger(WindowBoxOrderDisplay.class.getName()).log(Level.SEVERE, null, ex);
-            } catch (PrintException ex) {
-                Logger.getLogger(WindowBoxOrderDisplay.class.getName()).log(Level.SEVERE, null, ex);
-            }              
+            }
             this.dispose();
         }
        
