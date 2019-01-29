@@ -1,6 +1,6 @@
 package windows;
 
-import com.itextpdf.text.Document;
+import domain.Client;
 import domain.Drink;
 import domain.KitchenPossibilities;
 import domain.Model;
@@ -9,14 +9,11 @@ import domain.Plate;
 import java.awt.GraphicsEnvironment;
 import java.awt.Rectangle;
 import java.awt.Toolkit;
-import java.awt.print.PrinterException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.print.PrintException;
 import javax.swing.JDialog;
-import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import printHandler.PdfHandler;
 import printHandler.PrinterHandler;
@@ -31,6 +28,7 @@ public class WindowBoxOrderDisplay extends javax.swing.JFrame {
     private int subtotal = 0;
     private float discount = 0;
     private int total = 0;
+    private static final String COMMIT_ACTION = "commit";
     
     public WindowBoxOrderDisplay(Model m, Order o) {
         model = m;
@@ -67,6 +65,7 @@ public class WindowBoxOrderDisplay extends javax.swing.JFrame {
          txtDiscount.setText("" + discount);
          txtTotal.setText("" + total);
          lstPlatesAndDrinks.setListData(listOfKitchenPossibilities.toArray());
+         
     }
 
     @SuppressWarnings("unchecked")
@@ -95,12 +94,12 @@ public class WindowBoxOrderDisplay extends javax.swing.JFrame {
         txtTotal = new javax.swing.JTextField();
         jPanel3 = new javax.swing.JPanel();
         jPanel7 = new javax.swing.JPanel();
+        jPanel1 = new javax.swing.JPanel();
+        jPanel4 = new javax.swing.JPanel();
         jPanel15 = new javax.swing.JPanel();
         lblRut = new javax.swing.JLabel();
         jPanel16 = new javax.swing.JPanel();
         txtRut = new javax.swing.JTextField();
-        jPanel1 = new javax.swing.JPanel();
-        jPanel4 = new javax.swing.JPanel();
         jPanel6 = new javax.swing.JPanel();
         jPanel9 = new javax.swing.JPanel();
         jPanel11 = new javax.swing.JPanel();
@@ -189,7 +188,13 @@ public class WindowBoxOrderDisplay extends javax.swing.JFrame {
 
         jPanel7.setLayout(new java.awt.GridLayout(5, 2));
 
-        jPanel15.setLayout(new java.awt.GridLayout());
+        jPanel1.setLayout(new java.awt.GridLayout());
+        jPanel7.add(jPanel1);
+
+        jPanel4.setLayout(new java.awt.GridLayout(2, 0));
+        jPanel7.add(jPanel4);
+
+        jPanel15.setLayout(new java.awt.GridLayout(1, 0));
 
         lblRut.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lblRut.setText("Rut:");
@@ -209,37 +214,11 @@ public class WindowBoxOrderDisplay extends javax.swing.JFrame {
 
         jPanel7.add(jPanel16);
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 64, Short.MAX_VALUE)
-        );
-
-        jPanel7.add(jPanel1);
-
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 64, Short.MAX_VALUE)
-        );
-
-        jPanel7.add(jPanel4);
-
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
+            .addGap(0, 141, Short.MAX_VALUE)
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -248,24 +227,14 @@ public class WindowBoxOrderDisplay extends javax.swing.JFrame {
 
         jPanel7.add(jPanel6);
 
-        javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
-        jPanel9.setLayout(jPanel9Layout);
-        jPanel9Layout.setHorizontalGroup(
-            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-        jPanel9Layout.setVerticalGroup(
-            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 64, Short.MAX_VALUE)
-        );
-
+        jPanel9.setLayout(new java.awt.GridLayout(2, 0));
         jPanel7.add(jPanel9);
 
         javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
         jPanel11.setLayout(jPanel11Layout);
         jPanel11Layout.setHorizontalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
+            .addGap(0, 141, Short.MAX_VALUE)
         );
         jPanel11Layout.setVerticalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -278,7 +247,7 @@ public class WindowBoxOrderDisplay extends javax.swing.JFrame {
         jPanel12.setLayout(jPanel12Layout);
         jPanel12Layout.setHorizontalGroup(
             jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
+            .addGap(0, 141, Short.MAX_VALUE)
         );
         jPanel12Layout.setVerticalGroup(
             jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -291,7 +260,7 @@ public class WindowBoxOrderDisplay extends javax.swing.JFrame {
         jPanel13.setLayout(jPanel13Layout);
         jPanel13Layout.setHorizontalGroup(
             jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
+            .addGap(0, 141, Short.MAX_VALUE)
         );
         jPanel13Layout.setVerticalGroup(
             jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -304,7 +273,7 @@ public class WindowBoxOrderDisplay extends javax.swing.JFrame {
         jPanel14.setLayout(jPanel14Layout);
         jPanel14Layout.setHorizontalGroup(
             jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
+            .addGap(0, 141, Short.MAX_VALUE)
         );
         jPanel14Layout.setVerticalGroup(
             jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

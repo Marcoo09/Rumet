@@ -62,7 +62,21 @@ public class Model extends Observable implements Serializable{
     public ArrayList<Drink> getListOfDrinks() {
         return listOfDrinks;
     }
-
+    
+    public ArrayList<Drink> getListOfOrderDrinks(){
+        ArrayList<Drink> returnedArray = new ArrayList<>();
+        
+        for(int i = 0; i < this.getSortedListOfOrders().size(); i++){
+            Order currentOrder = this.getSortedListOfOrders().get(i);
+            for(int j = 0; j < currentOrder.getListOfDrinks().size(); j++){
+                Drink currentDrink = currentOrder.getListOfDrinks().get(j);
+                returnedArray.add(currentDrink);
+            }
+        }
+        
+        return returnedArray;
+    }
+        
     public ArrayList<Plate> getListOfPlates() {
         return listOfPlates;
     }
@@ -103,5 +117,38 @@ public class Model extends Observable implements Serializable{
         }
         
         return returnedArray;
+    }
+
+    public ArrayList<Plate> searchPlates(String search) {
+        ArrayList<Plate> listOfFilterPlates = new ArrayList<>();
+        ArrayList<Plate> allPlates = this.getListOfPlates();
+        
+        for (int i = 0; i < allPlates.size(); i++) {
+            Plate currentPlate = allPlates.get(i);
+            String aux = currentPlate.getMainPlate();
+            if(!currentPlate.getSecondaryPlate().isEmpty()){
+                aux += " y " + currentPlate.getSecondaryPlate();
+            }
+            if(aux.toLowerCase().contains(search)){
+                listOfFilterPlates.add(currentPlate);
+            }
+        }
+        
+        return listOfFilterPlates;
+    }
+
+    public ArrayList<Drink> searchDrink(String search) {
+        ArrayList<Drink> listOfFilterDrinks = new ArrayList<>();
+        ArrayList<Drink> allDrinks = this.getListOfDrinks();
+        
+        for (int i = 0; i < allDrinks.size(); i++) {
+            Drink currentDrink = allDrinks.get(i);
+            String aux = currentDrink.getBrand() + " " + currentDrink.getType() + " de " + currentDrink.getSize();
+            if(aux.toLowerCase().contains(search)){
+                listOfFilterDrinks.add(currentDrink);
+            }
+        }
+        
+        return listOfFilterDrinks;                
     }
 }

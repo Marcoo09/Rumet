@@ -110,6 +110,11 @@ public class WindowLogin extends javax.swing.JFrame {
         txtAccount.setBorder(null);
         txtAccount.setCaretColor(new java.awt.Color(255, 255, 255));
         txtAccount.setPreferredSize(new java.awt.Dimension(6, 24));
+        txtAccount.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtAccountFocusGained(evt);
+            }
+        });
         txtAccount.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 txtAccountMouseClicked(evt);
@@ -127,9 +132,17 @@ public class WindowLogin extends javax.swing.JFrame {
         txtPassword.setText("Contraseña");
         txtPassword.setBorder(null);
         txtPassword.setCaretColor(new java.awt.Color(255, 255, 255));
+        txtPassword.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtPasswordFocusGained(evt);
+            }
+        });
         txtPassword.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 txtPasswordMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                txtPasswordMouseEntered(evt);
             }
         });
         jPanel2.add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 310, 236, 40));
@@ -219,6 +232,22 @@ public class WindowLogin extends javax.swing.JFrame {
                 txtPassword.setText("");
             }  
     }//GEN-LAST:event_txtPasswordMouseClicked
+
+    private void txtPasswordMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtPasswordMouseEntered
+
+    }//GEN-LAST:event_txtPasswordMouseEntered
+
+    private void txtPasswordFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtPasswordFocusGained
+            if(txtPassword.getText().equals("Contraseña"))            {
+                txtPassword.setText("");
+            }  
+    }//GEN-LAST:event_txtPasswordFocusGained
+
+    private void txtAccountFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtAccountFocusGained
+         if(txtAccount.getText().equals("Usuario")){
+                txtAccount.setText("");
+            }  
+    }//GEN-LAST:event_txtAccountFocusGained
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

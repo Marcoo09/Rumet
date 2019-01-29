@@ -66,12 +66,22 @@ public class WindowOrder extends javax.swing.JFrame {
         jPanel11 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jPanel12 = new javax.swing.JPanel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        txtSearchPlates = new javax.swing.JTextField();
+        lblResultPlate = new javax.swing.JLabel();
         jPanel13 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jPanel14 = new javax.swing.JPanel();
         jPanel15 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jPanel16 = new javax.swing.JPanel();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        txtSearchDrink = new javax.swing.JTextField();
+        lblResultDrink = new javax.swing.JLabel();
         jPanel17 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         jPanel18 = new javax.swing.JPanel();
@@ -82,6 +92,7 @@ public class WindowOrder extends javax.swing.JFrame {
         jPanel21 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
+        txtQtyPlates = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         jButton3 = new javax.swing.JButton();
         jPanel22 = new javax.swing.JPanel();
@@ -94,6 +105,7 @@ public class WindowOrder extends javax.swing.JFrame {
         jPanel25 = new javax.swing.JPanel();
         jButton2 = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
+        txtQtyDrinks = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         jButton4 = new javax.swing.JButton();
         jPanel26 = new javax.swing.JPanel();
@@ -155,6 +167,26 @@ public class WindowOrder extends javax.swing.JFrame {
         jPanel11.add(jLabel1);
 
         jpanelMain.add(jPanel11);
+
+        jPanel12.setLayout(new java.awt.GridLayout(5, 0));
+        jPanel12.add(jLabel12);
+        jPanel12.add(jLabel13);
+        jPanel12.add(jLabel14);
+
+        txtSearchPlates.setText("Buscador");
+        txtSearchPlates.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtSearchPlatesMouseClicked(evt);
+            }
+        });
+        txtSearchPlates.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtSearchPlatesKeyPressed(evt);
+            }
+        });
+        jPanel12.add(txtSearchPlates);
+        jPanel12.add(lblResultPlate);
+
         jpanelMain.add(jPanel12);
 
         jPanel13.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 5, 60));
@@ -171,6 +203,26 @@ public class WindowOrder extends javax.swing.JFrame {
         jPanel15.add(jLabel3);
 
         jpanelMain.add(jPanel15);
+
+        jPanel16.setLayout(new java.awt.GridLayout(5, 0));
+        jPanel16.add(jLabel16);
+        jPanel16.add(jLabel17);
+        jPanel16.add(jLabel18);
+
+        txtSearchDrink.setText("Buscador");
+        txtSearchDrink.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtSearchDrinkMouseClicked(evt);
+            }
+        });
+        txtSearchDrink.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtSearchDrinkKeyPressed(evt);
+            }
+        });
+        jPanel16.add(txtSearchDrink);
+        jPanel16.add(lblResultDrink);
+
         jpanelMain.add(jPanel16);
 
         jPanel17.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 1, 60));
@@ -195,7 +247,7 @@ public class WindowOrder extends javax.swing.JFrame {
 
         jpanelMain.add(jPanel20);
 
-        jPanel21.setLayout(new java.awt.GridLayout(4, 2));
+        jPanel21.setLayout(new java.awt.GridLayout(5, 2));
 
         jButton1.setText(">");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -205,6 +257,10 @@ public class WindowOrder extends javax.swing.JFrame {
         });
         jPanel21.add(jButton1);
         jPanel21.add(jLabel5);
+
+        txtQtyPlates.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtQtyPlates.setText("1");
+        jPanel21.add(txtQtyPlates);
         jPanel21.add(jLabel6);
 
         jButton3.setText("<");
@@ -244,7 +300,7 @@ public class WindowOrder extends javax.swing.JFrame {
 
         jpanelMain.add(jPanel24);
 
-        jPanel25.setLayout(new java.awt.GridLayout(4, 2));
+        jPanel25.setLayout(new java.awt.GridLayout(5, 2));
 
         jButton2.setText(">");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -254,6 +310,10 @@ public class WindowOrder extends javax.swing.JFrame {
         });
         jPanel25.add(jButton2);
         jPanel25.add(jLabel7);
+
+        txtQtyDrinks.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtQtyDrinks.setText("1");
+        jPanel25.add(txtQtyDrinks);
         jPanel25.add(jLabel8);
 
         jButton4.setText("<");
@@ -312,7 +372,7 @@ public class WindowOrder extends javax.swing.JFrame {
 
         jpanelMain.add(jPanel41);
 
-        jPanel42.setLayout(new java.awt.GridLayout());
+        jPanel42.setLayout(new java.awt.GridLayout(1, 0));
 
         jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel11.setText("%");
@@ -340,25 +400,64 @@ public class WindowOrder extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         Plate selectedPlate = (Plate)lstPlates.getSelectedValue();
-        orderPlates.add(selectedPlate);
+        
+        try{
+            int qty = Integer.parseInt(txtQtyPlates.getText().trim());
+            for (int i = 1; i <= qty; i++) {
+                orderPlates.add(selectedPlate);
+            }
+        }catch(NumberFormatException e){
+            System.out.println("Fail" + e.getMessage());
+        }
+        txtQtyPlates.setText("1");
         lstOrderPlates.setListData(orderPlates.toArray());
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         Plate selectedPlate = (Plate)lstOrderPlates.getSelectedValue();
-        orderPlates.remove(selectedPlate);
+        
+        try{
+            int qty = Integer.parseInt(txtQtyPlates.getText().trim());
+            for (int i = 1; i <= qty; i++) {                
+                orderPlates.remove(selectedPlate);
+            }
+        }catch(NumberFormatException e){
+            System.out.println("Fail" + e.getMessage());
+        }
+        
+        txtQtyPlates.setText("1");
         lstOrderPlates.setListData(orderPlates.toArray());
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         Drink selectedDrink = (Drink)lstDrinks.getSelectedValue();
-        orderDrinks.add(selectedDrink);
+        
+        try{
+            int qty = Integer.parseInt(txtQtyDrinks.getText().trim());
+            for (int i = 1; i <= qty; i++) {
+                orderDrinks.add(selectedDrink);
+            }
+        }catch(NumberFormatException e){
+            System.out.println("Fail" + e.getMessage());
+        }
+        
+        txtQtyDrinks.setText("1");
         lstOrderDrinks.setListData(orderDrinks.toArray());
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         Drink selectedDrink = (Drink)lstOrderDrinks.getSelectedValue();
-        orderDrinks.remove(selectedDrink);
+        
+        try{
+            int qty = Integer.parseInt(txtQtyDrinks.getText().trim());
+            for (int i = 1; i <= qty; i++) {
+                orderDrinks.remove(selectedDrink);
+            }
+        }catch(NumberFormatException e){
+            System.out.println("Fail" + e.getMessage());
+        }
+        
+        txtQtyDrinks.setText("1");        
         lstOrderDrinks.setListData(orderDrinks.toArray());
     }//GEN-LAST:event_jButton4ActionPerformed
 
@@ -409,6 +508,40 @@ public class WindowOrder extends javax.swing.JFrame {
         
     }//GEN-LAST:event_btnAddActionPerformed
 
+    private void txtSearchPlatesKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtSearchPlatesKeyPressed
+        String search = txtSearchPlates.getText().trim();
+        ArrayList<Plate> listOfPlates = model.searchPlates(search.toLowerCase());
+        if(!listOfPlates.isEmpty()){
+            lblResultPlate.setText("");
+            lstPlates.setSelectedValue(listOfPlates.get(0), true);
+        }else{
+            lblResultPlate.setText("No se encontraron resultados");
+        }
+    }//GEN-LAST:event_txtSearchPlatesKeyPressed
+
+    private void txtSearchDrinkKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtSearchDrinkKeyPressed
+        String search = txtSearchDrink.getText().trim();
+        ArrayList<Drink> listOfDrinks = model.searchDrink(search.toLowerCase());
+        if(!listOfDrinks.isEmpty()){
+            lblResultDrink.setText("");
+            lstDrinks.setSelectedValue(listOfDrinks.get(0), true);
+        }else{
+            lblResultDrink.setText("No se encontraron resultados");
+        }
+    }//GEN-LAST:event_txtSearchDrinkKeyPressed
+
+    private void txtSearchPlatesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtSearchPlatesMouseClicked
+        if(txtSearchPlates.getText().trim().equals("Buscador")){
+            txtSearchPlates.setText("");
+        }
+    }//GEN-LAST:event_txtSearchPlatesMouseClicked
+
+    private void txtSearchDrinkMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtSearchDrinkMouseClicked
+        if(txtSearchDrink.getText().trim().equals("Buscador")){
+            txtSearchDrink.setText("");
+        }
+    }//GEN-LAST:event_txtSearchDrinkMouseClicked
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAdd;
     private javax.swing.JButton btnBack;
@@ -419,6 +552,12 @@ public class WindowOrder extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -478,10 +617,16 @@ public class WindowOrder extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JComboBox jcbTables;
     private javax.swing.JPanel jpanelMain;
+    private javax.swing.JLabel lblResultDrink;
+    private javax.swing.JLabel lblResultPlate;
     private javax.swing.JList lstDrinks;
     private javax.swing.JList lstOrderDrinks;
     private javax.swing.JList lstOrderPlates;
     private javax.swing.JList lstPlates;
     private javax.swing.JTextField txtDiscount;
+    private javax.swing.JTextField txtQtyDrinks;
+    private javax.swing.JTextField txtQtyPlates;
+    private javax.swing.JTextField txtSearchDrink;
+    private javax.swing.JTextField txtSearchPlates;
     // End of variables declaration//GEN-END:variables
 }

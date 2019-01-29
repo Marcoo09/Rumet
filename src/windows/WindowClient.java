@@ -64,7 +64,7 @@ public class WindowClient extends javax.swing.JFrame {
         jPanel33 = new javax.swing.JPanel();
         jPanel34 = new javax.swing.JPanel();
         jPanel35 = new javax.swing.JPanel();
-        btnAddDrink = new javax.swing.JButton();
+        btnAddClient = new javax.swing.JButton();
         jPanel36 = new javax.swing.JPanel();
         jPanel37 = new javax.swing.JPanel();
         jPanel38 = new javax.swing.JPanel();
@@ -77,7 +77,7 @@ public class WindowClient extends javax.swing.JFrame {
         jPanel45 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(new java.awt.GridLayout());
+        getContentPane().setLayout(new java.awt.GridLayout(1, 0));
 
         jPanelMain.setLayout(new java.awt.GridLayout(5, 9));
         jPanelMain.add(jPanel1);
@@ -150,13 +150,13 @@ public class WindowClient extends javax.swing.JFrame {
         jPanelMain.add(jPanel33);
         jPanelMain.add(jPanel34);
 
-        btnAddDrink.setText("Agregar");
-        btnAddDrink.addActionListener(new java.awt.event.ActionListener() {
+        btnAddClient.setText("Agregar");
+        btnAddClient.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAddDrinkActionPerformed(evt);
+                btnAddClientActionPerformed(evt);
             }
         });
-        jPanel35.add(btnAddDrink);
+        jPanel35.add(btnAddClient);
 
         jPanelMain.add(jPanel35);
         jPanelMain.add(jPanel36);
@@ -179,7 +179,7 @@ public class WindowClient extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtNameActionPerformed
 
-    private void btnAddDrinkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddDrinkActionPerformed
+    private void btnAddClientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddClientActionPerformed
         String name = txtName.getText();
         String rut = txtRut.getText();
         Client client = new Client(name, rut);
@@ -187,8 +187,8 @@ public class WindowClient extends javax.swing.JFrame {
         txtName.setText("");
         txtRut.setText("");
         client = null;
-        JOptionPane.showMessageDialog(this,"", "El plato fue agregado correctamente", 0);
-    }//GEN-LAST:event_btnAddDrinkActionPerformed
+        JOptionPane.showMessageDialog(this,"", "El Cliente fue agregado correctamente", 0);
+    }//GEN-LAST:event_btnAddClientActionPerformed
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         WindowMain wMain = new WindowMain(model);
@@ -198,7 +198,7 @@ public class WindowClient extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnAddDrink;
+    private javax.swing.JButton btnAddClient;
     private javax.swing.JButton btnBack;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
