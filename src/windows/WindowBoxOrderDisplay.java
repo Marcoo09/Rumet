@@ -11,6 +11,8 @@ import java.awt.Rectangle;
 import java.awt.Toolkit;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Observable;
+import java.util.Observer;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JDialog;
@@ -21,51 +23,45 @@ import printHandler.PrinterHandler;
 /**
  * @author Marco Fiorito
  */
-public class WindowBoxOrderDisplay extends javax.swing.JFrame {
+public class WindowBoxOrderDisplay extends javax.swing.JFrame implements Observer {
     private Model model;
     private Order order;
     private ArrayList<KitchenPossibilities> listOfKitchenPossibilities;
     private int subtotal = 0;
     private float discount = 0;
     private int total = 0;
-    private static final String COMMIT_ACTION = "commit";
     
     public WindowBoxOrderDisplay(Model m, Order o) {
         model = m;
         order = o;
-        ArrayList<Plate> plates = order.getListOfPlates();
-        ArrayList<Drink> drinks= order.getListOfDrinks();
-        listOfKitchenPossibilities = new ArrayList<>();
+        subtotal = order.getSubtotal();
         discount = order.getDiscount();
+        total = order.getTotal();
+        
+        ArrayList<Plate> plates = order.getListOfPlates();
+        ArrayList<Drink> drinks = order.getListOfDrinks();
+        listOfKitchenPossibilities = new ArrayList<>();
         
         initComponents();
         
         int screenWidth = Toolkit.getDefaultToolkit().getScreenSize().width;
-        int screenHeight = Toolkit.getDefaultToolkit().getScreenSize().height;
         Rectangle winSize = GraphicsEnvironment.getLocalGraphicsEnvironment().getMaximumWindowBounds();
         setSize(screenWidth / 2 , winSize.height+ 10 );
         setLocation(-7,0);
       
-      for(int i = 0; i < plates.size();i++){
-          listOfKitchenPossibilities.add(plates.get(i));
-          subtotal += plates.get(i).getCost();
-      }  
-         for(int i = 0; i < drinks.size();i++){
-          listOfKitchenPossibilities.add(drinks.get(i));
-          subtotal += drinks.get(i).getCost();
-      }  
-      
-         if(discount == 0){
-             total = subtotal;
-         }else{
-             total = subtotal - (int)(subtotal * (discount / 100));
-         }
+        for(int i = 0; i < plates.size();i++){
+           listOfKitchenPossibilities.add(plates.get(i));
+        }  
+        for(int i = 0; i < drinks.size();i++){
+           listOfKitchenPossibilities.add(drinks.get(i));
+        }  
          
          txtSubTotal.setText("" + subtotal);
          txtDiscount.setText("" + discount);
          txtTotal.setText("" + total);
          lstPlatesAndDrinks.setListData(listOfKitchenPossibilities.toArray());
          
+         order.addObserver(this);
     }
 
     @SuppressWarnings("unchecked")
@@ -430,4 +426,23 @@ public class WindowBoxOrderDisplay extends javax.swing.JFrame {
     private javax.swing.JTextField txtSubTotal;
     private javax.swing.JTextField txtTotal;
     // End of variables declaration//GEN-END:variables
+
+    @Override
+    public void update(Observable o, Object o1) {
+        ArrayList<Plate> plates = order.getListOfPlates();
+        ArrayList<Drink> drinks= order.getListOfDrinks();
+        listOfKitchenPossibilities = new ArrayList<>();
+        
+        for(int i = 0; i < plates.size();i++){
+            listOfKitchenPossibilities.add(plates.get(i));
+        }  
+        for(int i = 0; i < drinks.size();i++){
+            listOfKitchenPossibilities.add(drinks.get(i));
+        }  
+
+        txtSubTotal.setText("" + order.getSubtotal());
+        txtDiscount.setText("" + order.getDiscount());
+        txtTotal.setText("" + order.getTotal());
+        lstPlatesAndDrinks.setListData(listOfKitchenPossibilities.toArray());        
+    }
 }

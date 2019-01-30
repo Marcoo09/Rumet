@@ -5,6 +5,10 @@ import domain.Model;
 import domain.Order;
 import domain.Plate;
 import domain.Table;
+import java.awt.GraphicsEnvironment;
+import java.awt.GridLayout;
+import java.awt.Rectangle;
+import java.awt.Toolkit;
 import java.util.ArrayList;
 import java.util.Collections;
 import javax.swing.DefaultComboBoxModel;
@@ -20,12 +24,14 @@ public class WindowOrder extends javax.swing.JFrame {
     private ArrayList<Plate> orderPlates;
     private ArrayList<Drink> orderDrinks;
     private boolean isAnUpdate = false;
+    private Order receivedOrder = null;
     
     public WindowOrder(Model m, Order order) {
         model = m;
+        receivedOrder = order;
+        
         initComponents();
         
-        this.setExtendedState(JFrame.MAXIMIZED_BOTH);
         lstPlates.setListData(model.getListOfPlates().toArray());
         lstDrinks.setListData(model.getListOfDrinks().toArray());
         
@@ -36,12 +42,35 @@ public class WindowOrder extends javax.swing.JFrame {
         if(order == null){
             orderPlates = new ArrayList<>();
             orderDrinks = new ArrayList<>();
-         
+            this.setExtendedState(JFrame.MAXIMIZED_BOTH);
         }else{
             isAnUpdate = true;
             orderPlates = order.getListOfPlates();
             orderDrinks = order.getListOfDrinks();
             jcbTables.setSelectedIndex(order.getTable().getNumber() - 1);
+            
+            int screenWidth = Toolkit.getDefaultToolkit().getScreenSize().width;
+            int screenHeight = Toolkit.getDefaultToolkit().getScreenSize().height;
+            Rectangle winSize = GraphicsEnvironment.getLocalGraphicsEnvironment().getMaximumWindowBounds();
+            setSize((screenWidth + 34) / 2 + 7 , winSize.height + 10 );
+            setLocation(winSize.width / 2 - 20,0);
+            
+                        
+            GridLayout gridLayout = new GridLayout(5,7);
+            jpanelMain.setLayout(gridLayout);
+            
+            jpanelMain.remove(jPanel1);
+            jpanelMain.remove(jPanel10);
+            jpanelMain.remove(jPanel19);
+            jpanelMain.remove(jPanel28);
+            jpanelMain.remove(jPanel37);
+            jpanelMain.remove(jPanel8);
+            jpanelMain.remove(jPanel18);
+            jpanelMain.remove(jPanel27);
+            jpanelMain.remove(jPanel36);
+            jpanelMain.remove(jPanel45);
+
+
         }
             lstOrderPlates.setListData(orderPlates.toArray());
             lstOrderDrinks.setListData(orderDrinks.toArray());   
@@ -137,7 +166,7 @@ public class WindowOrder extends javax.swing.JFrame {
         btnAdd = new javax.swing.JButton();
         jPanel45 = new javax.swing.JPanel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(new java.awt.GridLayout(1, 0));
 
         jpanelMain.setLayout(new java.awt.GridLayout(5, 9));
@@ -472,7 +501,7 @@ public class WindowOrder extends javax.swing.JFrame {
     }//GEN-LAST:event_btnBackActionPerformed
 
     private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
-        Order order;
+        Order newOrder;
         
         String table = jcbTables.getSelectedItem().toString();
         int number = Integer.parseInt(Character.toString(table.charAt(table.length() - 1)));
@@ -494,16 +523,22 @@ public class WindowOrder extends javax.swing.JFrame {
         if(orderDrinks.isEmpty() && orderPlates.isEmpty()){
                JOptionPane.showMessageDialog(this, "No has agregado ni platos ni bebidas ","Error",  JOptionPane.ERROR_MESSAGE);
         }else{
-            order = new Order(orderPlates, orderDrinks, discount, selectedTable);
-            model.addOrder(order);
-            jcbTables.setSelectedIndex(0);
-            txtDiscount.setText("");
-            orderDrinks = new ArrayList<>();
-            orderPlates = new ArrayList<>();
-            lstOrderDrinks.setListData(orderDrinks.toArray());
-            lstOrderPlates.setListData(orderPlates.toArray());
-            order = null;
-            JOptionPane.showMessageDialog(this,"La Orden fue agregada correctamente","" , JOptionPane.INFORMATION_MESSAGE);
+            if(isAnUpdate){
+                receivedOrder.setOrderChanges(orderPlates, orderDrinks, discount, selectedTable);
+                this.dispose();
+            }else{
+                newOrder = new Order(orderPlates, orderDrinks, discount, selectedTable);
+                model.addOrder(newOrder);
+                jcbTables.setSelectedIndex(0);
+                txtDiscount.setText("");
+                orderDrinks = new ArrayList<>();
+                orderPlates = new ArrayList<>();
+                lstOrderDrinks.setListData(orderDrinks.toArray());
+                lstOrderPlates.setListData(orderPlates.toArray());
+                newOrder = null;
+                JOptionPane.showMessageDialog(this,"La Orden fue agregada correctamente","" , JOptionPane.INFORMATION_MESSAGE);
+            
+            }
         }
         
     }//GEN-LAST:event_btnAddActionPerformed
