@@ -432,6 +432,9 @@ public class WindowBoxOrderDisplay extends javax.swing.JFrame implements Observe
         ArrayList<Plate> plates = order.getListOfPlates();
         ArrayList<Drink> drinks= order.getListOfDrinks();
         listOfKitchenPossibilities = new ArrayList<>();
+        subtotal = order.getSubtotal();
+        discount = order.getDiscount();
+        total = order.getTotal();
         
         for(int i = 0; i < plates.size();i++){
             listOfKitchenPossibilities.add(plates.get(i));
@@ -440,9 +443,9 @@ public class WindowBoxOrderDisplay extends javax.swing.JFrame implements Observe
             listOfKitchenPossibilities.add(drinks.get(i));
         }  
 
-        txtSubTotal.setText("" + order.getSubtotal());
-        txtDiscount.setText("" + order.getDiscount());
-        txtTotal.setText("" + order.getTotal());
+        txtSubTotal.setText("" + subtotal);
+        txtDiscount.setText("" + discount);
+        txtTotal.setText("" + total);
         lstPlatesAndDrinks.setListData(listOfKitchenPossibilities.toArray());        
     }
 }

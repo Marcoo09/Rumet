@@ -34,6 +34,5 @@ public class Client implements Serializable{
     public String toString() {
         return name;
     }
-    
-    
+     
 }

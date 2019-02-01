@@ -3,7 +3,7 @@ package domain;
 /**
  * @author Marco Fiorito
  */
-public class Drink extends KitchenPossibilities{
+public class Drink extends KitchenPossibilities implements Comparable<Drink>{
     
     private String brand;
     public static String[] posibleSizes = {"","0.250","0.300","0.500","0.700","1.0","1.25","1.5","2.25"};
@@ -47,5 +47,22 @@ public class Drink extends KitchenPossibilities{
     public String toString() {
         return  brand + " " + type + " de " + size + " Precio: " + super.cost;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        String drink = this.getBrand() + " " + this.getType() + " " + this.getSize();
+        String parmDrink = ((Drink)o).getBrand() + " " + ((Drink)o).getType() + " " + ((Drink)o).getSize();
+        
+        return drink.equals(parmDrink);
+    }
+
+    @Override
+    public int compareTo(Drink t) {
+        String drink = this.getBrand() + " " + this.getType() + " " + this.getSize();
+        String parmDrink = t.getBrand() + " " + t.getType() + " " + t.getSize();
+        
+        return drink.compareTo(parmDrink);
+    }
+    
     
 }

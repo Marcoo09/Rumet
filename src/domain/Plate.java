@@ -2,7 +2,7 @@ package domain;
 /**
  * @author Marco Fiorito
  */
-public class Plate extends KitchenPossibilities{
+public class Plate extends KitchenPossibilities implements Comparable<Plate>{
     
     private String mainPlate;
     private String secondaryPlate;
@@ -45,4 +45,19 @@ public class Plate extends KitchenPossibilities{
         return mainPlate + " con " + secondaryPlate + " y salsa " + sauce  + " Precio: " + super.cost;
     }
     
+    @Override
+    public boolean equals(Object o) {
+        String plate = this.getMainPlate() + " " + this.getSecondaryPlate()+ " " + this.getSauce();
+        String parmPlate = ((Plate)o).getMainPlate() + " " + ((Plate)o).getSecondaryPlate() + " " + ((Plate)o).getSauce();
+        
+        return plate.equals(parmPlate);
+    }   
+
+    @Override
+    public int compareTo(Plate t) {
+        String plate = this.getMainPlate() + " " + this.getSecondaryPlate()+ " " + this.getSauce();
+        String parmPlate = t.getMainPlate() + " " + t.getSecondaryPlate() + " " + t.getSauce();
+        
+        return plate.compareTo(parmPlate);
+    }
 }
