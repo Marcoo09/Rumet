@@ -1,10 +1,16 @@
 package windows;
 
 import domain.Model;
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Toolkit;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.imageio.ImageIO;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 import utils.Utils;
 /**
  * @author Marco Fiorito
@@ -13,7 +19,7 @@ public class WindowMain extends javax.swing.JFrame {
     
     private Model model;
     
-    public WindowMain(Model m) {
+    public WindowMain(Model m){
         model = m;
         initComponents();
 
@@ -25,7 +31,16 @@ public class WindowMain extends javax.swing.JFrame {
         jpanel.width = screenSize.width;
         
         jpanelButtons.setPreferredSize(jpanel);
-        
+        FondoSwing fondo;
+        try {
+            fondo = new FondoSwing(ImageIO.read(getClass().getResource("/resources/images/Background.jpg")));
+            JPanel panel = (JPanel) this.getContentPane();
+            panel.setBorder(fondo);
+            jpanelButtons.setBorder(fondo);
+        } catch (IOException ex) {
+            Logger.getLogger(WindowMain.class.getName()).log(Level.SEVERE, null, ex);
+        }
+            
         if(model.getTypeOfUser().equals("cocina")){
             btnDrink.setVisible(false);
             btnTable.setVisible(false);
@@ -51,10 +66,12 @@ public class WindowMain extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new java.awt.GridLayout(15, 0));
 
+        jpanelButtons.setBackground(new java.awt.Color(51, 51, 51));
         jpanelButtons.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jpanelButtons.setMaximumSize(new java.awt.Dimension(32767, 200));
         jpanelButtons.setLayout(new java.awt.GridLayout(1, 0));
 
+        btnOrder.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/Bill_32px.png"))); // NOI18N
         btnOrder.setText("Pedido");
         btnOrder.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -63,6 +80,7 @@ public class WindowMain extends javax.swing.JFrame {
         });
         jpanelButtons.add(btnOrder);
 
+        btnPlate.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/tray_24px.png"))); // NOI18N
         btnPlate.setText("Plato");
         btnPlate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -71,6 +89,7 @@ public class WindowMain extends javax.swing.JFrame {
         });
         jpanelButtons.add(btnPlate);
 
+        btnDrink.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/Bottle_32px.png"))); // NOI18N
         btnDrink.setText("Bebida");
         btnDrink.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -79,6 +98,7 @@ public class WindowMain extends javax.swing.JFrame {
         });
         jpanelButtons.add(btnDrink);
 
+        btnTable.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/Table_32px.png"))); // NOI18N
         btnTable.setText("Mesa");
         btnTable.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -87,6 +107,7 @@ public class WindowMain extends javax.swing.JFrame {
         });
         jpanelButtons.add(btnTable);
 
+        btnClose.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/Close_32px.png"))); // NOI18N
         btnClose.setText("Salir");
         btnClose.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -97,8 +118,9 @@ public class WindowMain extends javax.swing.JFrame {
 
         getContentPane().add(jpanelButtons);
 
-        jPanel1.setLayout(new java.awt.GridLayout());
+        jPanel1.setLayout(new java.awt.GridLayout(1, 0));
 
+        btnListOfOrders.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/List_32px.png"))); // NOI18N
         btnListOfOrders.setText("Lista de pedidos");
         btnListOfOrders.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

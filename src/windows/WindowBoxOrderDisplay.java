@@ -15,8 +15,10 @@ import java.util.Observable;
 import java.util.Observer;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.imageio.ImageIO;
 import javax.swing.JDialog;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 import printHandler.PdfHandler;
 import printHandler.PrinterHandler;
 
@@ -62,6 +64,29 @@ public class WindowBoxOrderDisplay extends javax.swing.JFrame implements Observe
          lstPlatesAndDrinks.setListData(listOfKitchenPossibilities.toArray());
          
          order.addObserver(this);
+         
+        FondoSwing fondo;
+        try {
+            fondo = new FondoSwing(ImageIO.read(getClass().getResource("/resources/images/Background.jpg")));
+            jPanel1.setBorder(fondo);
+            jPanel2.setBorder(fondo);
+            jPanel3.setBorder(fondo);
+            jPanel4.setBorder(fondo);
+            jPanel5.setBorder(fondo);
+            jPanel6.setBorder(fondo);
+            jPanel7.setBorder(fondo);
+            jPanel8.setBorder(fondo);
+            jPanel9.setBorder(fondo);
+            jPanel10.setBorder(fondo);
+            jPanel11.setBorder(fondo);
+            jPanel12.setBorder(fondo);
+            jPanel13.setBorder(fondo);
+            jPanel14.setBorder(fondo);
+            jPanel15.setBorder(fondo);
+            jPanel16.setBorder(fondo);
+        } catch (IOException ex) {
+            Logger.getLogger(WindowMain.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     @SuppressWarnings("unchecked")
@@ -153,26 +178,35 @@ public class WindowBoxOrderDisplay extends javax.swing.JFrame implements Observe
         jPanel10.add(jLabel15);
         jPanel10.add(jLabel16);
 
+        jLabel17.setForeground(new java.awt.Color(255, 255, 255));
         jLabel17.setText("Subtotal: ");
         jPanel10.add(jLabel17);
 
         txtSubTotal.setEditable(false);
+        txtSubTotal.setBackground(new java.awt.Color(102, 102, 102));
+        txtSubTotal.setForeground(new java.awt.Color(255, 255, 255));
         txtSubTotal.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jPanel10.add(txtSubTotal);
         jPanel10.add(jLabel18);
 
+        jLabel19.setForeground(new java.awt.Color(255, 255, 255));
         jLabel19.setText("Descuento: ");
         jPanel10.add(jLabel19);
 
         txtDiscount.setEditable(false);
+        txtDiscount.setBackground(new java.awt.Color(102, 102, 102));
+        txtDiscount.setForeground(new java.awt.Color(255, 255, 255));
         txtDiscount.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jPanel10.add(txtDiscount);
         jPanel10.add(jLabel20);
 
+        jLabel21.setForeground(new java.awt.Color(255, 255, 255));
         jLabel21.setText("Total: ");
         jPanel10.add(jLabel21);
 
         txtTotal.setEditable(false);
+        txtTotal.setBackground(new java.awt.Color(102, 102, 102));
+        txtTotal.setForeground(new java.awt.Color(255, 255, 255));
         txtTotal.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jPanel10.add(txtTotal);
 
@@ -184,7 +218,7 @@ public class WindowBoxOrderDisplay extends javax.swing.JFrame implements Observe
 
         jPanel7.setLayout(new java.awt.GridLayout(5, 2));
 
-        jPanel1.setLayout(new java.awt.GridLayout());
+        jPanel1.setLayout(new java.awt.GridLayout(1, 0));
         jPanel7.add(jPanel1);
 
         jPanel4.setLayout(new java.awt.GridLayout(2, 0));
@@ -192,6 +226,7 @@ public class WindowBoxOrderDisplay extends javax.swing.JFrame implements Observe
 
         jPanel15.setLayout(new java.awt.GridLayout(1, 0));
 
+        lblRut.setForeground(new java.awt.Color(255, 255, 255));
         lblRut.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lblRut.setText("Rut:");
         lblRut.setVerticalAlignment(javax.swing.SwingConstants.TOP);
@@ -201,6 +236,9 @@ public class WindowBoxOrderDisplay extends javax.swing.JFrame implements Observe
 
         jPanel16.setLayout(new java.awt.GridLayout(2, 0));
 
+        txtRut.setBackground(new java.awt.Color(102, 102, 102));
+        txtRut.setForeground(new java.awt.Color(255, 255, 255));
+        txtRut.setCaretColor(new java.awt.Color(255, 255, 255));
         txtRut.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtRutActionPerformed(evt);

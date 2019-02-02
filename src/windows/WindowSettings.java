@@ -1,6 +1,11 @@
 package windows;
 
 import domain.Model;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.imageio.ImageIO;
+import javax.swing.JPanel;
 
 /**
  * @author Marco Fiorito
@@ -12,6 +17,15 @@ public class WindowSettings extends javax.swing.JFrame {
     public WindowSettings(Model m) {
         model = m;
         initComponents();
+        
+        FondoSwing fondo;
+        try {
+            fondo = new FondoSwing(ImageIO.read(getClass().getResource("/resources/images/Background.png")));
+            JPanel panel = (JPanel) this.getContentPane();
+            panel.setBorder(fondo);
+        } catch (IOException ex) {
+            Logger.getLogger(WindowMain.class.getName()).log(Level.SEVERE, null, ex);
+        }        
     }
 
     @SuppressWarnings("unchecked")

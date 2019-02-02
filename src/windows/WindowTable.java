@@ -2,8 +2,13 @@ package windows;
 
 import domain.Model;
 import domain.Table;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.imageio.ImageIO;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 
 /**
  * @author Marco Fiorito
@@ -17,6 +22,29 @@ public class WindowTable extends javax.swing.JFrame {
         initComponents();
         
         this.setExtendedState(JFrame.MAXIMIZED_BOTH);
+        
+        FondoSwing fondo;
+        try {
+            fondo = new FondoSwing(ImageIO.read(getClass().getResource("/resources/images/Background.jpg")));
+            jPanelMain.setBorder(fondo);            
+            jPanel1.setBorder(fondo);
+            jPanel2.setBorder(fondo);
+            jPanel3.setBorder(fondo);
+            jPanel4.setBorder(fondo);
+            jPanel5.setBorder(fondo);
+            jPanel6.setBorder(fondo);
+            jPanel7.setBorder(fondo);
+            jPanel8.setBorder(fondo);
+            jPanel9.setBorder(fondo);
+            jPanel10.setBorder(fondo);
+            jPanel11.setBorder(fondo);
+            jPanel12.setBorder(fondo);
+            jPanel13.setBorder(fondo);
+            jPanel14.setBorder(fondo);
+            jPanel15.setBorder(fondo);
+        } catch (IOException ex) {
+            Logger.getLogger(WindowMain.class.getName()).log(Level.SEVERE, null, ex);
+        }        
     }
 
     @SuppressWarnings("unchecked")
@@ -28,19 +56,12 @@ public class WindowTable extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         lblRange = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
+        jLabel35 = new javax.swing.JLabel();
         btnBack = new javax.swing.JButton();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel17 = new javax.swing.JLabel();
-        jLabel18 = new javax.swing.JLabel();
-        jLabel19 = new javax.swing.JLabel();
-        jLabel24 = new javax.swing.JLabel();
-        jLabel25 = new javax.swing.JLabel();
-        jLabel26 = new javax.swing.JLabel();
-        jLabel27 = new javax.swing.JLabel();
-        jLabel28 = new javax.swing.JLabel();
+        jLabel36 = new javax.swing.JLabel();
+        jLabel37 = new javax.swing.JLabel();
+        jLabel38 = new javax.swing.JLabel();
+        jLabel39 = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
@@ -87,15 +108,16 @@ public class WindowTable extends javax.swing.JFrame {
 
         jPanel1.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 5, 40));
 
+        lblRange.setForeground(new java.awt.Color(255, 255, 255));
         lblRange.setText("Rango de mesas a agregar");
         jPanel1.add(lblRange);
 
         jPanelMain.add(jPanel1);
 
-        jPanel3.setLayout(new java.awt.GridLayout(5, 5));
-        jPanel3.add(jLabel3);
-        jPanel3.add(jLabel4);
+        jPanel3.setLayout(new java.awt.GridLayout(3, 3));
+        jPanel3.add(jLabel35);
 
+        btnBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/Back_32px.png"))); // NOI18N
         btnBack.setText("Volver");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -103,26 +125,22 @@ public class WindowTable extends javax.swing.JFrame {
             }
         });
         jPanel3.add(btnBack);
-        jPanel3.add(jLabel5);
-        jPanel3.add(jLabel6);
-        jPanel3.add(jLabel17);
-        jPanel3.add(jLabel18);
-        jPanel3.add(jLabel19);
-        jPanel3.add(jLabel24);
-        jPanel3.add(jLabel25);
-        jPanel3.add(jLabel26);
-        jPanel3.add(jLabel27);
-        jPanel3.add(jLabel28);
+        jPanel3.add(jLabel36);
+        jPanel3.add(jLabel37);
+        jPanel3.add(jLabel38);
+        jPanel3.add(jLabel39);
 
         jPanelMain.add(jPanel3);
         jPanelMain.add(jPanel5);
 
         jPanel4.setLayout(new java.awt.GridLayout(5, 3));
 
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Inicial");
         jPanel4.add(jLabel2);
 
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Final");
         jPanel4.add(jLabel1);
@@ -137,7 +155,10 @@ public class WindowTable extends javax.swing.JFrame {
         jPanel4.add(jLabel22);
         jPanel4.add(jLabel23);
 
+        txtInit.setBackground(new java.awt.Color(102, 102, 102));
+        txtInit.setForeground(new java.awt.Color(255, 255, 255));
         txtInit.setText(" ");
+        txtInit.setCaretColor(new java.awt.Color(255, 255, 255));
         txtInit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtInitActionPerformed(evt);
@@ -145,7 +166,10 @@ public class WindowTable extends javax.swing.JFrame {
         });
         jPanel4.add(txtInit);
 
+        txtFinal.setBackground(new java.awt.Color(102, 102, 102));
+        txtFinal.setForeground(new java.awt.Color(255, 255, 255));
         txtFinal.setText(" ");
+        txtFinal.setCaretColor(new java.awt.Color(255, 255, 255));
         txtFinal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtFinalActionPerformed(evt);
@@ -248,29 +272,22 @@ public class WindowTable extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
-    private javax.swing.JLabel jLabel24;
-    private javax.swing.JLabel jLabel25;
-    private javax.swing.JLabel jLabel26;
-    private javax.swing.JLabel jLabel27;
-    private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel34;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel35;
+    private javax.swing.JLabel jLabel36;
+    private javax.swing.JLabel jLabel37;
+    private javax.swing.JLabel jLabel38;
+    private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;

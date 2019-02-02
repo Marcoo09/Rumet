@@ -2,10 +2,16 @@ package windows;
 
 import domain.Drink;
 import domain.Model;
+import java.awt.Color;
+import java.io.IOException;
 import java.util.Arrays;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.imageio.ImageIO;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 
 /**
  * @author Marco Fiorito
@@ -20,6 +26,60 @@ public class WindowDrink extends javax.swing.JFrame {
         
         jcbSizes.setModel(new DefaultComboBoxModel(Drink.posibleSizes));
         jcbTypes.setModel(new DefaultComboBoxModel(Drink.typePosibilities));
+        
+        FondoSwing fondo;
+        try {
+            fondo = new FondoSwing(ImageIO.read(getClass().getResource("/resources/images/Background.jpg")));
+            jPanelMain.setBorder(fondo);          
+            jPanel1.setBorder(fondo);
+            jPanel2.setBorder(fondo);
+            jPanel3.setBorder(fondo);
+            jPanel4.setBorder(fondo);
+            jPanel5.setBorder(fondo);
+            jPanel6.setBorder(fondo);
+            jPanel7.setBorder(fondo);
+            jPanel8.setBorder(fondo);
+            jPanel9.setBorder(fondo);
+            jPanel10.setBorder(fondo);
+            jPanel11.setBorder(fondo);
+            jPanel12.setBorder(fondo);
+            jPanel13.setBorder(fondo);
+            jPanel14.setBorder(fondo);
+            jPanel15.setBorder(fondo);
+            jPanel16.setBorder(fondo);
+            jPanel17.setBorder(fondo);
+            jPanel18.setBorder(fondo);
+            jPanel19.setBorder(fondo);
+            jPanel20.setBorder(fondo);
+            jPanel21.setBorder(fondo);
+            jPanel22.setBorder(fondo);
+            jPanel23.setBorder(fondo);
+            jPanel24.setBorder(fondo);
+            jPanel25.setBorder(fondo);
+            jPanel26.setBorder(fondo);
+            jPanel27.setBorder(fondo);
+            jPanel28.setBorder(fondo);
+            jPanel29.setBorder(fondo);
+            jPanel30.setBorder(fondo);
+            jPanel31.setBorder(fondo);
+            jPanel32.setBorder(fondo);
+            jPanel33.setBorder(fondo);
+            jPanel34.setBorder(fondo);
+            jPanel35.setBorder(fondo);
+            jPanel36.setBorder(fondo);
+            jPanel37.setBorder(fondo);
+            jPanel38.setBorder(fondo);
+            jPanel39.setBorder(fondo);
+            jPanel40.setBorder(fondo);
+            jPanel41.setBorder(fondo);
+            jPanel42.setBorder(fondo);
+            jPanel43.setBorder(fondo);
+            jPanel44.setBorder(fondo);
+            jPanel45.setBorder(fondo);
+
+        } catch (IOException ex) {
+            Logger.getLogger(WindowMain.class.getName()).log(Level.SEVERE, null, ex);
+        }        
     }
 
     @SuppressWarnings("unchecked")
@@ -99,6 +159,7 @@ public class WindowDrink extends javax.swing.JFrame {
         jPanelMain.add(jPanel7);
         jPanelMain.add(jPanel8);
 
+        btnBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/Back_32px.png"))); // NOI18N
         btnBack.setText("Volver");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -112,6 +173,7 @@ public class WindowDrink extends javax.swing.JFrame {
 
         jPanel11.setLayout(new java.awt.GridLayout(5, 0));
 
+        lblDrink.setForeground(new java.awt.Color(255, 255, 255));
         lblDrink.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblDrink.setText("Bebida:");
         jPanel11.add(lblDrink);
@@ -120,6 +182,9 @@ public class WindowDrink extends javax.swing.JFrame {
 
         jPanel12.setLayout(new java.awt.GridLayout(5, 0));
 
+        txtBrand.setBackground(new java.awt.Color(102, 102, 102));
+        txtBrand.setForeground(new java.awt.Color(255, 255, 255));
+        txtBrand.setCaretColor(new java.awt.Color(255, 255, 255));
         txtBrand.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtBrandActionPerformed(evt);
@@ -134,6 +199,7 @@ public class WindowDrink extends javax.swing.JFrame {
 
         jPanel14.setLayout(new java.awt.GridLayout(5, 5));
 
+        jcbSizes.setBackground(new java.awt.Color(102, 102, 102));
         jcbSizes.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jPanel14.add(jcbSizes);
 
@@ -141,14 +207,16 @@ public class WindowDrink extends javax.swing.JFrame {
 
         jPanel15.setLayout(new java.awt.GridLayout(5, 0));
 
+        lblLT.setForeground(new java.awt.Color(255, 255, 255));
         lblLT.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         lblLT.setText("LT");
         jPanel15.add(lblLT);
 
         jPanelMain.add(jPanel15);
 
-        jPanel16.setLayout(new java.awt.GridLayout());
+        jPanel16.setLayout(new java.awt.GridLayout(1, 0));
 
+        lblType.setForeground(new java.awt.Color(255, 255, 255));
         lblType.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblType.setText("Tipo:");
         lblType.setVerticalAlignment(javax.swing.SwingConstants.TOP);
@@ -186,12 +254,17 @@ public class WindowDrink extends javax.swing.JFrame {
 
         jPanel29.setLayout(new java.awt.GridLayout(5, 0));
 
+        lblDescription.setForeground(new java.awt.Color(255, 255, 255));
         lblDescription.setText("Descripción (opcional):");
         jPanel29.add(lblDescription);
 
         jPanelMain.add(jPanel29);
 
         jPanel30.setLayout(new java.awt.GridLayout(5, 0));
+
+        txtDescription.setBackground(new java.awt.Color(102, 102, 102));
+        txtDescription.setForeground(new java.awt.Color(255, 255, 255));
+        txtDescription.setCaretColor(new java.awt.Color(255, 255, 255));
         jPanel30.add(txtDescription);
 
         jPanelMain.add(jPanel30);
@@ -201,6 +274,7 @@ public class WindowDrink extends javax.swing.JFrame {
 
         jPanel32.setLayout(new java.awt.GridLayout(5, 0));
 
+        lblCost.setForeground(new java.awt.Color(255, 255, 255));
         lblCost.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblCost.setText("Costo:");
         jPanel32.add(lblCost);
@@ -208,12 +282,17 @@ public class WindowDrink extends javax.swing.JFrame {
         jPanelMain.add(jPanel32);
 
         jPanel33.setLayout(new java.awt.GridLayout(5, 0));
+
+        txtCost.setBackground(new java.awt.Color(102, 102, 102));
+        txtCost.setForeground(new java.awt.Color(255, 255, 255));
+        txtCost.setCaretColor(new java.awt.Color(255, 255, 255));
         jPanel33.add(txtCost);
 
         jPanelMain.add(jPanel33);
 
         jPanel34.setLayout(new java.awt.GridLayout(5, 5));
 
+        lblMoney.setForeground(new java.awt.Color(255, 255, 255));
         lblMoney.setText("$");
         jPanel34.add(lblMoney);
 

@@ -2,11 +2,16 @@ package windows;
 
 import domain.Model;
 import domain.Order;
+import java.io.IOException;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Observable;
 import java.util.Observer;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.imageio.ImageIO;
 import javax.swing.JFrame;
+import javax.swing.JPanel;
 
 /**
  * @author Marco Fiorito
@@ -23,6 +28,21 @@ public class WindowBoxOrderList extends javax.swing.JFrame implements Observer {
         this.setExtendedState(JFrame.MAXIMIZED_BOTH);
         
         lstOrder.setListData(model.getSortedListOfOrders().toArray());
+        
+        FondoSwing fondo;
+        try {
+            fondo = new FondoSwing(ImageIO.read(getClass().getResource("/resources/images/Background.jpg")));
+            JPanel panel = (JPanel) this.getContentPane();
+            panel.setBorder(fondo);
+            jPanel2.setBorder(fondo);
+            jPanel3.setBorder(fondo);
+            jPanel4.setBorder(fondo);
+            jPanel5.setBorder(fondo);
+            jPanel6.setBorder(fondo);
+            
+        } catch (IOException ex) {
+            Logger.getLogger(WindowMain.class.getName()).log(Level.SEVERE, null, ex);
+        }        
     }
 
     @SuppressWarnings("unchecked")
@@ -44,6 +64,10 @@ public class WindowBoxOrderList extends javax.swing.JFrame implements Observer {
         jLabel17 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new java.awt.GridLayout(1, 3));
@@ -54,11 +78,11 @@ public class WindowBoxOrderList extends javax.swing.JFrame implements Observer {
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 224, Short.MAX_VALUE)
+            .addGap(0, 408, Short.MAX_VALUE)
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 463, Short.MAX_VALUE)
+            .addGap(0, 1200, Short.MAX_VALUE)
         );
 
         jPanel2.add(jPanel4);
@@ -83,10 +107,11 @@ public class WindowBoxOrderList extends javax.swing.JFrame implements Observer {
 
         jPanel6.setLayout(new java.awt.GridLayout(5, 0));
 
-        jPanel3.setLayout(new java.awt.GridLayout(3, 3));
+        jPanel3.setLayout(new java.awt.GridLayout(4, 3));
         jPanel3.add(jLabel3);
         jPanel3.add(jLabel4);
 
+        btnBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/Back_32px.png"))); // NOI18N
         btnBack.setText("Volver");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -99,6 +124,10 @@ public class WindowBoxOrderList extends javax.swing.JFrame implements Observer {
         jPanel3.add(jLabel17);
         jPanel3.add(jLabel18);
         jPanel3.add(jLabel19);
+        jPanel3.add(jLabel7);
+        jPanel3.add(jLabel8);
+        jPanel3.add(jLabel9);
+        jPanel3.add(jLabel10);
 
         jPanel6.add(jPanel3);
 
@@ -124,6 +153,7 @@ public class WindowBoxOrderList extends javax.swing.JFrame implements Observer {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBack;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
@@ -131,6 +161,9 @@ public class WindowBoxOrderList extends javax.swing.JFrame implements Observer {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;

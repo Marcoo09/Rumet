@@ -2,8 +2,14 @@ package windows;
 
 import domain.Client;
 import domain.Model;
+import java.awt.Color;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.imageio.ImageIO;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 
 /**
  * @author Marco Fiorito
@@ -17,6 +23,58 @@ public class WindowClient extends javax.swing.JFrame {
         initComponents();
         this.setExtendedState(JFrame.MAXIMIZED_BOTH);
         
+        FondoSwing fondo;
+        try {
+            fondo = new FondoSwing(ImageIO.read(getClass().getResource("/resources/images/Background.jpg")));
+            jPanelMain.setBorder(fondo);          
+            jPanel1.setBorder(fondo);
+            jPanel2.setBorder(fondo);
+            jPanel3.setBorder(fondo);
+            jPanel4.setBorder(fondo);
+            jPanel5.setBorder(fondo);
+            jPanel6.setBorder(fondo);
+            jPanel7.setBorder(fondo);
+            jPanel8.setBorder(fondo);
+            jPanel9.setBorder(fondo);
+            jPanel10.setBorder(fondo);
+            jPanel11.setBorder(fondo);
+            jPanel12.setBorder(fondo);
+            jPanel13.setBorder(fondo);
+            jPanel14.setBorder(fondo);
+            jPanel15.setBorder(fondo);
+            jPanel16.setBorder(fondo);
+            jPanel17.setBorder(fondo);
+            jPanel18.setBorder(fondo);
+            jPanel19.setBorder(fondo);
+            jPanel20.setBorder(fondo);
+            jPanel21.setBorder(fondo);
+            jPanel22.setBorder(fondo);
+            jPanel23.setBorder(fondo);
+            jPanel24.setBorder(fondo);
+            jPanel25.setBorder(fondo);
+            jPanel26.setBorder(fondo);
+            jPanel27.setBorder(fondo);
+            jPanel28.setBorder(fondo);
+            jPanel29.setBorder(fondo);
+            jPanel30.setBorder(fondo);
+            jPanel31.setBorder(fondo);
+            jPanel32.setBorder(fondo);
+            jPanel33.setBorder(fondo);
+            jPanel34.setBorder(fondo);
+            jPanel35.setBorder(fondo);
+            jPanel36.setBorder(fondo);
+            jPanel37.setBorder(fondo);
+            jPanel38.setBorder(fondo);
+            jPanel39.setBorder(fondo);
+            jPanel40.setBorder(fondo);
+            jPanel41.setBorder(fondo);
+            jPanel42.setBorder(fondo);
+            jPanel43.setBorder(fondo);
+            jPanel44.setBorder(fondo);
+            jPanel45.setBorder(fondo);
+        } catch (IOException ex) {
+            Logger.getLogger(WindowMain.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     @SuppressWarnings("unchecked")
@@ -89,6 +147,7 @@ public class WindowClient extends javax.swing.JFrame {
         jPanelMain.add(jPanel7);
         jPanelMain.add(jPanel8);
 
+        btnBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/Back_32px.png"))); // NOI18N
         btnBack.setText("Volver");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -102,6 +161,7 @@ public class WindowClient extends javax.swing.JFrame {
 
         jPanel11.setLayout(new java.awt.GridLayout(5, 0));
 
+        lblName.setForeground(new java.awt.Color(255, 255, 255));
         lblName.setText("Nombre:");
         jPanel11.add(lblName);
 
@@ -109,6 +169,9 @@ public class WindowClient extends javax.swing.JFrame {
 
         jPanel12.setLayout(new java.awt.GridLayout(5, 0));
 
+        txtName.setBackground(new java.awt.Color(102, 102, 102));
+        txtName.setForeground(new java.awt.Color(255, 255, 255));
+        txtName.setCaretColor(new java.awt.Color(255, 255, 255));
         txtName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtNameActionPerformed(evt);
@@ -127,12 +190,17 @@ public class WindowClient extends javax.swing.JFrame {
 
         jPanel20.setLayout(new java.awt.GridLayout(5, 0));
 
+        lblRut.setForeground(new java.awt.Color(255, 255, 255));
         lblRut.setText("RUT:");
         jPanel20.add(lblRut);
 
         jPanelMain.add(jPanel20);
 
         jPanel21.setLayout(new java.awt.GridLayout(5, 0));
+
+        txtRut.setBackground(new java.awt.Color(102, 102, 102));
+        txtRut.setForeground(new java.awt.Color(255, 255, 255));
+        txtRut.setCaretColor(new java.awt.Color(255, 255, 255));
         jPanel21.add(txtRut);
 
         jPanelMain.add(jPanel21);

@@ -3,10 +3,15 @@ package windows;
 import domain.Model;
 import domain.Order;
 import domain.Plate;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Observable;
 import java.util.Observer;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.imageio.ImageIO;
 import javax.swing.JFrame;
+import javax.swing.JPanel;
 
 /**
  * @author Marco Fiorito
@@ -24,6 +29,16 @@ public class WindowKitchenOrderList extends javax.swing.JFrame implements Observ
         
         listOfPlates = model.getListOfOrderPlates();
         lstPlates.setListData(listOfPlates.toArray());
+        
+        FondoSwing fondo;
+        try {
+            fondo = new FondoSwing(ImageIO.read(getClass().getResource("/resources/images/Background.jpg")));
+            jPanel2.setBorder(fondo);
+            jPanel3.setBorder(fondo);
+            jPanel6.setBorder(fondo);
+        } catch (IOException ex) {
+            Logger.getLogger(WindowMain.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -46,11 +61,11 @@ public class WindowKitchenOrderList extends javax.swing.JFrame implements Observ
         btnCompletePlate = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(new java.awt.GridLayout());
+        getContentPane().setLayout(new java.awt.GridLayout(1, 0));
 
         jPanel2.setLayout(new java.awt.GridLayout(1, 3));
 
-        jPanel5.setLayout(new java.awt.GridLayout());
+        jPanel5.setLayout(new java.awt.GridLayout(1, 0));
 
         lstPlates.setModel(new javax.swing.AbstractListModel() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
@@ -74,6 +89,7 @@ public class WindowKitchenOrderList extends javax.swing.JFrame implements Observ
         jPanel3.add(jLabel3);
         jPanel3.add(jLabel4);
 
+        btnBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/Back_32px.png"))); // NOI18N
         btnBack.setText("Volver");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

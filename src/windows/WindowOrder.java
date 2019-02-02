@@ -9,11 +9,16 @@ import java.awt.GraphicsEnvironment;
 import java.awt.GridLayout;
 import java.awt.Rectangle;
 import java.awt.Toolkit;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.imageio.ImageIO;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 
 /**
  * @author Marco Fiorito
@@ -57,30 +62,83 @@ public class WindowOrder extends javax.swing.JFrame {
             
                         
             GridLayout gridLayout = new GridLayout(5,7);
-            jpanelMain.setLayout(gridLayout);
+            jPanelMain.setLayout(gridLayout);
             
-            jpanelMain.remove(jPanel1);
-            jpanelMain.remove(jPanel10);
-            jpanelMain.remove(jPanel19);
-            jpanelMain.remove(jPanel28);
-            jpanelMain.remove(jPanel37);
-            jpanelMain.remove(jPanel8);
-            jpanelMain.remove(jPanel18);
-            jpanelMain.remove(jPanel27);
-            jpanelMain.remove(jPanel36);
-            jpanelMain.remove(jPanel45);
+            jPanelMain.remove(jPanel1);
+            jPanelMain.remove(jPanel10);
+            jPanelMain.remove(jPanel19);
+            jPanelMain.remove(jPanel28);
+            jPanelMain.remove(jPanel37);
+            jPanelMain.remove(jPanel8);
+            jPanelMain.remove(jPanel18);
+            jPanelMain.remove(jPanel27);
+            jPanelMain.remove(jPanel36);
+            jPanelMain.remove(jPanel45);
 
 
         }
-            lstOrderPlates.setListData(orderPlates.toArray());
-            lstOrderDrinks.setListData(orderDrinks.toArray());   
+        lstOrderPlates.setListData(orderPlates.toArray());
+        lstOrderDrinks.setListData(orderDrinks.toArray());   
+            
+        FondoSwing fondo;
+        try {
+            fondo = new FondoSwing(ImageIO.read(getClass().getResource("/resources/images/Background.jpg")));
+            jPanelMain.setBorder(fondo);           
+            jPanel1.setBorder(fondo);
+            jPanel2.setBorder(fondo);
+            jPanel3.setBorder(fondo);
+            jPanel4.setBorder(fondo);
+            jPanel5.setBorder(fondo);
+            jPanel6.setBorder(fondo);
+            jPanel7.setBorder(fondo);
+            jPanel8.setBorder(fondo);
+            jPanel9.setBorder(fondo);
+            jPanel10.setBorder(fondo);
+            jPanel11.setBorder(fondo);
+            jPanel12.setBorder(fondo);
+            jPanel13.setBorder(fondo);
+            jPanel14.setBorder(fondo);
+            jPanel15.setBorder(fondo);
+            jPanel16.setBorder(fondo);
+            jPanel17.setBorder(fondo);
+            jPanel18.setBorder(fondo);
+            jPanel19.setBorder(fondo);
+            jPanel20.setBorder(fondo);
+            jPanel21.setBorder(fondo);
+            jPanel22.setBorder(fondo);
+            jPanel23.setBorder(fondo);
+            jPanel24.setBorder(fondo);
+            jPanel25.setBorder(fondo);
+            jPanel26.setBorder(fondo);
+            jPanel27.setBorder(fondo);
+            jPanel28.setBorder(fondo);
+            jPanel29.setBorder(fondo);
+            jPanel30.setBorder(fondo);
+            jPanel31.setBorder(fondo);
+            jPanel32.setBorder(fondo);
+            jPanel33.setBorder(fondo);
+            jPanel34.setBorder(fondo);
+            jPanel35.setBorder(fondo);
+            jPanel36.setBorder(fondo);
+            jPanel37.setBorder(fondo);
+            jPanel38.setBorder(fondo);
+            jPanel39.setBorder(fondo);
+            jPanel40.setBorder(fondo);
+            jPanel41.setBorder(fondo);
+            jPanel42.setBorder(fondo);
+            jPanel43.setBorder(fondo);
+            jPanel44.setBorder(fondo);
+            jPanel45.setBorder(fondo);
+        } catch (IOException ex) {
+            Logger.getLogger(WindowMain.class.getName()).log(Level.SEVERE, null, ex);
+        }            
     }
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jpanelMain = new javax.swing.JPanel();
+        jPanelMain = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
@@ -169,16 +227,17 @@ public class WindowOrder extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(new java.awt.GridLayout(1, 0));
 
-        jpanelMain.setLayout(new java.awt.GridLayout(5, 9));
-        jpanelMain.add(jPanel1);
-        jpanelMain.add(jPanel2);
-        jpanelMain.add(jPanel3);
-        jpanelMain.add(jPanel4);
-        jpanelMain.add(jPanel5);
-        jpanelMain.add(jPanel6);
-        jpanelMain.add(jPanel7);
-        jpanelMain.add(jPanel8);
+        jPanelMain.setLayout(new java.awt.GridLayout(5, 9));
+        jPanelMain.add(jPanel1);
+        jPanelMain.add(jPanel2);
+        jPanelMain.add(jPanel3);
+        jPanelMain.add(jPanel4);
+        jPanelMain.add(jPanel5);
+        jPanelMain.add(jPanel6);
+        jPanelMain.add(jPanel7);
+        jPanelMain.add(jPanel8);
 
+        btnBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/Back_32px.png"))); // NOI18N
         btnBack.setText("Volver");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -187,22 +246,26 @@ public class WindowOrder extends javax.swing.JFrame {
         });
         jPanel9.add(btnBack);
 
-        jpanelMain.add(jPanel9);
-        jpanelMain.add(jPanel10);
+        jPanelMain.add(jPanel9);
+        jPanelMain.add(jPanel10);
 
         jPanel11.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 5, 60));
 
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Platos");
         jPanel11.add(jLabel1);
 
-        jpanelMain.add(jPanel11);
+        jPanelMain.add(jPanel11);
 
         jPanel12.setLayout(new java.awt.GridLayout(5, 0));
         jPanel12.add(jLabel12);
         jPanel12.add(jLabel13);
         jPanel12.add(jLabel14);
 
+        txtSearchPlates.setBackground(new java.awt.Color(102, 102, 102));
+        txtSearchPlates.setForeground(new java.awt.Color(255, 255, 255));
         txtSearchPlates.setText("Buscador");
+        txtSearchPlates.setCaretColor(new java.awt.Color(255, 255, 255));
         txtSearchPlates.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 txtSearchPlatesMouseClicked(evt);
@@ -216,29 +279,34 @@ public class WindowOrder extends javax.swing.JFrame {
         jPanel12.add(txtSearchPlates);
         jPanel12.add(lblResultPlate);
 
-        jpanelMain.add(jPanel12);
+        jPanelMain.add(jPanel12);
 
         jPanel13.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 5, 60));
 
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Platos Pedidos");
         jPanel13.add(jLabel2);
 
-        jpanelMain.add(jPanel13);
-        jpanelMain.add(jPanel14);
+        jPanelMain.add(jPanel13);
+        jPanelMain.add(jPanel14);
 
         jPanel15.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 5, 60));
 
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Bebidas");
         jPanel15.add(jLabel3);
 
-        jpanelMain.add(jPanel15);
+        jPanelMain.add(jPanel15);
 
         jPanel16.setLayout(new java.awt.GridLayout(5, 0));
         jPanel16.add(jLabel16);
         jPanel16.add(jLabel17);
         jPanel16.add(jLabel18);
 
+        txtSearchDrink.setBackground(new java.awt.Color(102, 102, 102));
+        txtSearchDrink.setForeground(new java.awt.Color(255, 255, 255));
         txtSearchDrink.setText("Buscador");
+        txtSearchDrink.setCaretColor(new java.awt.Color(255, 255, 255));
         txtSearchDrink.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 txtSearchDrinkMouseClicked(evt);
@@ -252,16 +320,17 @@ public class WindowOrder extends javax.swing.JFrame {
         jPanel16.add(txtSearchDrink);
         jPanel16.add(lblResultDrink);
 
-        jpanelMain.add(jPanel16);
+        jPanelMain.add(jPanel16);
 
         jPanel17.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 1, 60));
 
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Bebidas Pedidas");
         jPanel17.add(jLabel4);
 
-        jpanelMain.add(jPanel17);
-        jpanelMain.add(jPanel18);
-        jpanelMain.add(jPanel19);
+        jPanelMain.add(jPanel17);
+        jPanelMain.add(jPanel18);
+        jPanelMain.add(jPanel19);
 
         jPanel20.setLayout(new java.awt.GridLayout(1, 0));
 
@@ -274,11 +343,11 @@ public class WindowOrder extends javax.swing.JFrame {
 
         jPanel20.add(jScrollPane1);
 
-        jpanelMain.add(jPanel20);
+        jPanelMain.add(jPanel20);
 
         jPanel21.setLayout(new java.awt.GridLayout(5, 2));
 
-        jButton1.setText(">");
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/right-arrow.png"))); // NOI18N
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -287,12 +356,15 @@ public class WindowOrder extends javax.swing.JFrame {
         jPanel21.add(jButton1);
         jPanel21.add(jLabel5);
 
+        txtQtyPlates.setBackground(new java.awt.Color(102, 102, 102));
+        txtQtyPlates.setForeground(new java.awt.Color(255, 255, 255));
         txtQtyPlates.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtQtyPlates.setText("1");
+        txtQtyPlates.setCaretColor(new java.awt.Color(255, 255, 255));
         jPanel21.add(txtQtyPlates);
         jPanel21.add(jLabel6);
 
-        jButton3.setText("<");
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/left-arrow.png"))); // NOI18N
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
@@ -300,7 +372,7 @@ public class WindowOrder extends javax.swing.JFrame {
         });
         jPanel21.add(jButton3);
 
-        jpanelMain.add(jPanel21);
+        jPanelMain.add(jPanel21);
 
         jPanel22.setLayout(new java.awt.GridLayout(1, 0));
 
@@ -313,8 +385,8 @@ public class WindowOrder extends javax.swing.JFrame {
 
         jPanel22.add(jScrollPane2);
 
-        jpanelMain.add(jPanel22);
-        jpanelMain.add(jPanel23);
+        jPanelMain.add(jPanel22);
+        jPanelMain.add(jPanel23);
 
         jPanel24.setLayout(new java.awt.GridLayout(1, 0));
 
@@ -327,11 +399,11 @@ public class WindowOrder extends javax.swing.JFrame {
 
         jPanel24.add(jScrollPane3);
 
-        jpanelMain.add(jPanel24);
+        jPanelMain.add(jPanel24);
 
         jPanel25.setLayout(new java.awt.GridLayout(5, 2));
 
-        jButton2.setText(">");
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/right-arrow.png"))); // NOI18N
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -340,12 +412,15 @@ public class WindowOrder extends javax.swing.JFrame {
         jPanel25.add(jButton2);
         jPanel25.add(jLabel7);
 
+        txtQtyDrinks.setBackground(new java.awt.Color(102, 102, 102));
+        txtQtyDrinks.setForeground(new java.awt.Color(255, 255, 255));
         txtQtyDrinks.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtQtyDrinks.setText("1");
+        txtQtyDrinks.setCaretColor(new java.awt.Color(255, 255, 255));
         jPanel25.add(txtQtyDrinks);
         jPanel25.add(jLabel8);
 
-        jButton4.setText("<");
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/left-arrow.png"))); // NOI18N
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
@@ -353,7 +428,7 @@ public class WindowOrder extends javax.swing.JFrame {
         });
         jPanel25.add(jButton4);
 
-        jpanelMain.add(jPanel25);
+        jPanelMain.add(jPanel25);
 
         jPanel26.setLayout(new java.awt.GridLayout(1, 0));
 
@@ -366,50 +441,57 @@ public class WindowOrder extends javax.swing.JFrame {
 
         jPanel26.add(jScrollPane4);
 
-        jpanelMain.add(jPanel26);
-        jpanelMain.add(jPanel27);
-        jpanelMain.add(jPanel28);
-        jpanelMain.add(jPanel29);
-        jpanelMain.add(jPanel30);
-        jpanelMain.add(jPanel31);
-        jpanelMain.add(jPanel32);
-        jpanelMain.add(jPanel33);
-        jpanelMain.add(jPanel34);
-        jpanelMain.add(jPanel35);
-        jpanelMain.add(jPanel36);
-        jpanelMain.add(jPanel37);
+        jPanelMain.add(jPanel26);
+        jPanelMain.add(jPanel27);
+        jPanelMain.add(jPanel28);
+        jPanelMain.add(jPanel29);
+        jPanelMain.add(jPanel30);
+        jPanelMain.add(jPanel31);
+        jPanelMain.add(jPanel32);
+        jPanelMain.add(jPanel33);
+        jPanelMain.add(jPanel34);
+        jPanelMain.add(jPanel35);
+        jPanelMain.add(jPanel36);
+        jPanelMain.add(jPanel37);
 
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("Mesa:");
         jPanel38.add(jLabel9);
 
-        jpanelMain.add(jPanel38);
+        jPanelMain.add(jPanel38);
 
         jPanel39.setLayout(new java.awt.GridLayout(5, 0));
 
         jcbTables.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jPanel39.add(jcbTables);
 
-        jpanelMain.add(jPanel39);
+        jPanelMain.add(jPanel39);
 
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setText("Descuento:");
         jPanel40.add(jLabel10);
 
-        jpanelMain.add(jPanel40);
+        jPanelMain.add(jPanel40);
 
         jPanel41.setLayout(new java.awt.GridLayout(5, 0));
+
+        txtDiscount.setBackground(new java.awt.Color(102, 102, 102));
+        txtDiscount.setForeground(new java.awt.Color(255, 255, 255));
+        txtDiscount.setCaretColor(new java.awt.Color(255, 255, 255));
         jPanel41.add(txtDiscount);
 
-        jpanelMain.add(jPanel41);
+        jPanelMain.add(jPanel41);
 
         jPanel42.setLayout(new java.awt.GridLayout(1, 0));
 
+        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
         jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel11.setText("%");
         jLabel11.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         jPanel42.add(jLabel11);
 
-        jpanelMain.add(jPanel42);
-        jpanelMain.add(jPanel43);
+        jPanelMain.add(jPanel42);
+        jPanelMain.add(jPanel43);
 
         btnAdd.setText("Agregar");
         btnAdd.addActionListener(new java.awt.event.ActionListener() {
@@ -419,10 +501,10 @@ public class WindowOrder extends javax.swing.JFrame {
         });
         jPanel44.add(btnAdd);
 
-        jpanelMain.add(jPanel44);
-        jpanelMain.add(jPanel45);
+        jPanelMain.add(jPanel44);
+        jPanelMain.add(jPanel45);
 
-        getContentPane().add(jpanelMain);
+        getContentPane().add(jPanelMain);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -646,12 +728,12 @@ public class WindowOrder extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
+    private javax.swing.JPanel jPanelMain;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JComboBox jcbTables;
-    private javax.swing.JPanel jpanelMain;
     private javax.swing.JLabel lblResultDrink;
     private javax.swing.JLabel lblResultPlate;
     private javax.swing.JList lstDrinks;
