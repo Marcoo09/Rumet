@@ -161,6 +161,7 @@ public class WindowClient extends javax.swing.JFrame {
 
         jPanel11.setLayout(new java.awt.GridLayout(5, 0));
 
+        lblName.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         lblName.setForeground(new java.awt.Color(255, 255, 255));
         lblName.setText("Nombre:");
         jPanel11.add(lblName);
@@ -190,6 +191,7 @@ public class WindowClient extends javax.swing.JFrame {
 
         jPanel20.setLayout(new java.awt.GridLayout(5, 0));
 
+        lblRut.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         lblRut.setForeground(new java.awt.Color(255, 255, 255));
         lblRut.setText("RUT:");
         jPanel20.add(lblRut);

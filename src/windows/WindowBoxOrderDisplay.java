@@ -158,6 +158,7 @@ public class WindowBoxOrderDisplay extends javax.swing.JFrame implements Observe
 
         jPanel5.setLayout(new java.awt.GridLayout(1, 0));
 
+        lstPlatesAndDrinks.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         lstPlatesAndDrinks.setModel(new javax.swing.AbstractListModel() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
@@ -178,6 +179,7 @@ public class WindowBoxOrderDisplay extends javax.swing.JFrame implements Observe
         jPanel10.add(jLabel15);
         jPanel10.add(jLabel16);
 
+        jLabel17.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jLabel17.setForeground(new java.awt.Color(255, 255, 255));
         jLabel17.setText("Subtotal: ");
         jPanel10.add(jLabel17);
@@ -189,6 +191,7 @@ public class WindowBoxOrderDisplay extends javax.swing.JFrame implements Observe
         jPanel10.add(txtSubTotal);
         jPanel10.add(jLabel18);
 
+        jLabel19.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jLabel19.setForeground(new java.awt.Color(255, 255, 255));
         jLabel19.setText("Descuento: ");
         jPanel10.add(jLabel19);
@@ -200,6 +203,7 @@ public class WindowBoxOrderDisplay extends javax.swing.JFrame implements Observe
         jPanel10.add(txtDiscount);
         jPanel10.add(jLabel20);
 
+        jLabel21.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jLabel21.setForeground(new java.awt.Color(255, 255, 255));
         jLabel21.setText("Total: ");
         jPanel10.add(jLabel21);
@@ -226,6 +230,7 @@ public class WindowBoxOrderDisplay extends javax.swing.JFrame implements Observe
 
         jPanel15.setLayout(new java.awt.GridLayout(1, 0));
 
+        lblRut.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         lblRut.setForeground(new java.awt.Color(255, 255, 255));
         lblRut.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lblRut.setText("Rut:");

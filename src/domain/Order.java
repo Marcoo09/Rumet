@@ -210,7 +210,7 @@ public class Order extends Observable implements Serializable, Comparable{
 
     @Override
     public String toString() {
-        return " Mesa " + table + " Hora: " + date.toString();
+        return " Mesa " + table.getNumber();
     }
 
     @Override

@@ -173,6 +173,7 @@ public class WindowDrink extends javax.swing.JFrame {
 
         jPanel11.setLayout(new java.awt.GridLayout(5, 0));
 
+        lblDrink.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         lblDrink.setForeground(new java.awt.Color(255, 255, 255));
         lblDrink.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblDrink.setText("Bebida:");
@@ -205,10 +206,11 @@ public class WindowDrink extends javax.swing.JFrame {
 
         jPanelMain.add(jPanel14);
 
-        jPanel15.setLayout(new java.awt.GridLayout(5, 0));
+        jPanel15.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.LEFT, 10, 0));
 
+        lblLT.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         lblLT.setForeground(new java.awt.Color(255, 255, 255));
-        lblLT.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lblLT.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblLT.setText("LT");
         jPanel15.add(lblLT);
 
@@ -216,6 +218,7 @@ public class WindowDrink extends javax.swing.JFrame {
 
         jPanel16.setLayout(new java.awt.GridLayout(1, 0));
 
+        lblType.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         lblType.setForeground(new java.awt.Color(255, 255, 255));
         lblType.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblType.setText("Tipo:");
@@ -254,6 +257,7 @@ public class WindowDrink extends javax.swing.JFrame {
 
         jPanel29.setLayout(new java.awt.GridLayout(5, 0));
 
+        lblDescription.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         lblDescription.setForeground(new java.awt.Color(255, 255, 255));
         lblDescription.setText("Descripción (opcional):");
         jPanel29.add(lblDescription);
@@ -274,6 +278,7 @@ public class WindowDrink extends javax.swing.JFrame {
 
         jPanel32.setLayout(new java.awt.GridLayout(5, 0));
 
+        lblCost.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         lblCost.setForeground(new java.awt.Color(255, 255, 255));
         lblCost.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblCost.setText("Costo:");
@@ -290,9 +295,11 @@ public class WindowDrink extends javax.swing.JFrame {
 
         jPanelMain.add(jPanel33);
 
-        jPanel34.setLayout(new java.awt.GridLayout(5, 5));
+        jPanel34.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.LEFT, 10, 0));
 
+        lblMoney.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         lblMoney.setForeground(new java.awt.Color(255, 255, 255));
+        lblMoney.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         lblMoney.setText("$");
         jPanel34.add(lblMoney);
 

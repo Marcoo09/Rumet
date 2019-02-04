@@ -1,7 +1,6 @@
 package windows;
 
 import domain.Model;
-import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.io.IOException;
@@ -11,7 +10,6 @@ import javax.imageio.ImageIO;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import utils.Utils;
 /**
  * @author Marco Fiorito
  */

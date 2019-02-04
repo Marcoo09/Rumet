@@ -158,6 +158,7 @@ public class WindowPlate extends javax.swing.JFrame {
 
         jPanel5.setLayout(new java.awt.GridLayout(1, 0));
 
+        lblPlate1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         lblPlate1.setForeground(new java.awt.Color(255, 255, 255));
         lblPlate1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblPlate1.setText("(opcional)");
@@ -193,6 +194,7 @@ public class WindowPlate extends javax.swing.JFrame {
 
         jPanel11.setLayout(new java.awt.GridLayout(1, 0));
 
+        lblPlate.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         lblPlate.setForeground(new java.awt.Color(255, 255, 255));
         lblPlate.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblPlate.setText("Plato:");
@@ -212,6 +214,7 @@ public class WindowPlate extends javax.swing.JFrame {
 
         jPanel13.setLayout(new java.awt.GridLayout(1, 0));
 
+        lblWith.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         lblWith.setForeground(new java.awt.Color(255, 255, 255));
         lblWith.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblWith.setText("Con");
@@ -246,6 +249,7 @@ public class WindowPlate extends javax.swing.JFrame {
 
         jPanel20.setLayout(new java.awt.GridLayout(5, 0));
 
+        lblSauce.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         lblSauce.setForeground(new java.awt.Color(255, 255, 255));
         lblSauce.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblSauce.setText("Salsa (opcional):");
@@ -286,6 +290,7 @@ public class WindowPlate extends javax.swing.JFrame {
 
         jPanel29.setLayout(new java.awt.GridLayout(1, 0));
 
+        lblDescription.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         lblDescription.setForeground(new java.awt.Color(255, 255, 255));
         lblDescription.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblDescription.setText("Descripción (opcional):");
@@ -308,6 +313,7 @@ public class WindowPlate extends javax.swing.JFrame {
 
         jPanel32.setLayout(new java.awt.GridLayout(1, 0));
 
+        lblCost.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         lblCost.setForeground(new java.awt.Color(255, 255, 255));
         lblCost.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblCost.setText("Costo:");

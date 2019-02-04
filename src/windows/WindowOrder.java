@@ -251,6 +251,7 @@ public class WindowOrder extends javax.swing.JFrame {
 
         jPanel11.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 5, 60));
 
+        jLabel1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Platos");
         jPanel11.add(jLabel1);
@@ -283,6 +284,7 @@ public class WindowOrder extends javax.swing.JFrame {
 
         jPanel13.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 5, 60));
 
+        jLabel2.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Platos Pedidos");
         jPanel13.add(jLabel2);
@@ -292,6 +294,7 @@ public class WindowOrder extends javax.swing.JFrame {
 
         jPanel15.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 5, 60));
 
+        jLabel3.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Bebidas");
         jPanel15.add(jLabel3);
@@ -324,6 +327,7 @@ public class WindowOrder extends javax.swing.JFrame {
 
         jPanel17.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 1, 60));
 
+        jLabel4.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Bebidas Pedidas");
         jPanel17.add(jLabel4);
@@ -454,6 +458,7 @@ public class WindowOrder extends javax.swing.JFrame {
         jPanelMain.add(jPanel36);
         jPanelMain.add(jPanel37);
 
+        jLabel9.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("Mesa:");
         jPanel38.add(jLabel9);
@@ -467,6 +472,7 @@ public class WindowOrder extends javax.swing.JFrame {
 
         jPanelMain.add(jPanel39);
 
+        jLabel10.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setText("Descuento:");
         jPanel40.add(jLabel10);
@@ -482,8 +488,9 @@ public class WindowOrder extends javax.swing.JFrame {
 
         jPanelMain.add(jPanel41);
 
-        jPanel42.setLayout(new java.awt.GridLayout(1, 0));
+        jPanel42.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.LEFT, 10, 0));
 
+        jLabel11.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
         jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel11.setText("%");

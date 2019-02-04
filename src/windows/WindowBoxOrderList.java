@@ -89,6 +89,7 @@ public class WindowBoxOrderList extends javax.swing.JFrame implements Observer {
 
         jPanel5.setLayout(new java.awt.GridLayout(1, 0));
 
+        lstOrder.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         lstOrder.setModel(new javax.swing.AbstractListModel() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }

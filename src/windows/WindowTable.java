@@ -64,14 +64,14 @@ public class WindowTable extends javax.swing.JFrame {
         jLabel39 = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
         jLabel22 = new javax.swing.JLabel();
         jLabel23 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
         txtInit = new javax.swing.JTextField();
         txtFinal = new javax.swing.JTextField();
         jPanel6 = new javax.swing.JPanel();
@@ -108,6 +108,7 @@ public class WindowTable extends javax.swing.JFrame {
 
         jPanel1.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 5, 40));
 
+        lblRange.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         lblRange.setForeground(new java.awt.Color(255, 255, 255));
         lblRange.setText("Rango de mesas a agregar");
         jPanel1.add(lblRange);
@@ -134,16 +135,6 @@ public class WindowTable extends javax.swing.JFrame {
         jPanelMain.add(jPanel5);
 
         jPanel4.setLayout(new java.awt.GridLayout(5, 3));
-
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("Inicial");
-        jPanel4.add(jLabel2);
-
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Final");
-        jPanel4.add(jLabel1);
         jPanel4.add(jLabel11);
         jPanel4.add(jLabel12);
 
@@ -154,6 +145,19 @@ public class WindowTable extends javax.swing.JFrame {
         jPanel4.add(jLabel21);
         jPanel4.add(jLabel22);
         jPanel4.add(jLabel23);
+
+        jLabel2.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText("Inicial");
+        jPanel4.add(jLabel2);
+
+        jLabel1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("Final");
+        jLabel1.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        jPanel4.add(jLabel1);
 
         txtInit.setBackground(new java.awt.Color(102, 102, 102));
         txtInit.setForeground(new java.awt.Color(255, 255, 255));
