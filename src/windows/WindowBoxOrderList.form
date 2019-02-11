@@ -18,126 +18,258 @@
     <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
     <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
     <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
-    <AuxValue name="designerSize" type="java.awt.Dimension" value="-84,-19,0,5,115,114,0,18,106,97,118,97,46,97,119,116,46,68,105,109,101,110,115,105,111,110,65,-114,-39,-41,-84,95,68,20,2,0,2,73,0,6,104,101,105,103,104,116,73,0,5,119,105,100,116,104,120,112,0,0,4,-80,0,0,4,-56"/>
+    <AuxValue name="designerSize" type="java.awt.Dimension" value="-84,-19,0,5,115,114,0,18,106,97,118,97,46,97,119,116,46,68,105,109,101,110,115,105,111,110,65,-114,-39,-41,-84,95,68,20,2,0,2,73,0,6,104,101,105,103,104,116,73,0,5,119,105,100,116,104,120,112,0,0,3,-64,0,0,7,-8"/>
   </AuxValues>
 
   <Layout class="org.netbeans.modules.form.compat2.layouts.DesignGridLayout">
-    <Property name="columns" type="int" value="3"/>
-    <Property name="rows" type="int" value="1"/>
+    <Property name="columns" type="int" value="0"/>
+    <Property name="rows" type="int" value="2"/>
   </Layout>
   <SubComponents>
-    <Container class="javax.swing.JPanel" name="jPanel2">
+    <Container class="javax.swing.JPanel" name="panelAuxiliarButtons">
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.DesignGridLayout">
-        <Property name="columns" type="int" value="3"/>
-        <Property name="rows" type="int" value="1"/>
+        <Property name="columns" type="int" value="10"/>
+        <Property name="rows" type="int" value="10"/>
       </Layout>
       <SubComponents>
-        <Container class="javax.swing.JPanel" name="jPanel4">
+        <Component class="javax.swing.JLabel" name="jLabel1">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel2">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel3">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel4">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel5">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel6">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel7">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel8">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel9">
+        </Component>
+        <Component class="javax.swing.JButton" name="btnBack3">
+          <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/resources/images/Back_32px.png"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Volver"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnBack3ActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel10">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel11">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel12">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel13">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel14">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel15">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel16">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel17">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel18">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel19">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel20">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel21">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel22">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel23">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel24">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel25">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel26">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel27">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel28">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel29">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel30">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel31">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel32">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel33">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel34">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel35">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel36">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel37">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel38">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel39">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel40">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel41">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel42">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel43">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel44">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel45">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel46">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel47">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel48">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel49">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel50">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel51">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel52">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel53">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel54">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel55">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel56">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel57">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel58">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel59">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel60">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel61">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel62">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel63">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel64">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel65">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel66">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel67">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel68">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel69">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel70">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel71">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel72">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel73">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel74">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel75">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel76">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel77">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel78">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel79">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel80">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel81">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel82">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel83">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel84">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel85">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel86">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel87">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel88">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel89">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel90">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel91">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel92">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel93">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel94">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel95">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel96">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel97">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel98">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel99">
+        </Component>
+      </SubComponents>
+    </Container>
+    <Container class="javax.swing.JPanel" name="jPanel1">
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.DesignCardLayout">
+        <Property name="horizontalGap" type="int" value="100"/>
+        <Property name="verticalGap" type="int" value="30"/>
+      </Layout>
+      <SubComponents>
+        <Container class="javax.swing.JPanel" name="panelButtons">
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
+              <CardConstraints cardName="card2"/>
+            </Constraint>
+          </Constraints>
 
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <EmptySpace min="0" pref="408" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <EmptySpace min="0" pref="1200" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="420" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
           </Layout>
-        </Container>
-        <Container class="javax.swing.JPanel" name="jPanel5">
-
-          <Layout class="org.netbeans.modules.form.compat2.layouts.DesignGridLayout">
-            <Property name="columns" type="int" value="0"/>
-            <Property name="rows" type="int" value="1"/>
-          </Layout>
-          <SubComponents>
-            <Container class="javax.swing.JScrollPane" name="jScrollPane1">
-              <AuxValues>
-                <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
-              </AuxValues>
-
-              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
-              <SubComponents>
-                <Component class="javax.swing.JList" name="lstOrder">
-                  <Properties>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Dialog" size="18" style="1"/>
-                    </Property>
-                    <Property name="model" type="javax.swing.ListModel" editor="org.netbeans.modules.form.editors2.ListModelEditor">
-                      <StringArray count="5">
-                        <StringItem index="0" value="Item 1"/>
-                        <StringItem index="1" value="Item 2"/>
-                        <StringItem index="2" value="Item 3"/>
-                        <StringItem index="3" value="Item 4"/>
-                        <StringItem index="4" value="Item 5"/>
-                      </StringArray>
-                    </Property>
-                  </Properties>
-                  <Events>
-                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lstOrderMouseClicked"/>
-                  </Events>
-                  <AuxValues>
-                    <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value=""/>
-                  </AuxValues>
-                </Component>
-              </SubComponents>
-            </Container>
-          </SubComponents>
-        </Container>
-        <Container class="javax.swing.JPanel" name="jPanel6">
-
-          <Layout class="org.netbeans.modules.form.compat2.layouts.DesignGridLayout">
-            <Property name="columns" type="int" value="0"/>
-            <Property name="rows" type="int" value="5"/>
-          </Layout>
-          <SubComponents>
-            <Container class="javax.swing.JPanel" name="jPanel3">
-
-              <Layout class="org.netbeans.modules.form.compat2.layouts.DesignGridLayout">
-                <Property name="columns" type="int" value="3"/>
-                <Property name="rows" type="int" value="4"/>
-              </Layout>
-              <SubComponents>
-                <Component class="javax.swing.JLabel" name="jLabel3">
-                </Component>
-                <Component class="javax.swing.JLabel" name="jLabel4">
-                </Component>
-                <Component class="javax.swing.JButton" name="btnBack">
-                  <Properties>
-                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/resources/images/Back_32px.png"/>
-                    </Property>
-                    <Property name="text" type="java.lang.String" value="Volver"/>
-                  </Properties>
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnBackActionPerformed"/>
-                  </Events>
-                </Component>
-                <Component class="javax.swing.JLabel" name="jLabel5">
-                </Component>
-                <Component class="javax.swing.JLabel" name="jLabel6">
-                </Component>
-                <Component class="javax.swing.JLabel" name="jLabel17">
-                </Component>
-                <Component class="javax.swing.JLabel" name="jLabel18">
-                </Component>
-                <Component class="javax.swing.JLabel" name="jLabel19">
-                </Component>
-                <Component class="javax.swing.JLabel" name="jLabel7">
-                </Component>
-                <Component class="javax.swing.JLabel" name="jLabel8">
-                </Component>
-                <Component class="javax.swing.JLabel" name="jLabel9">
-                </Component>
-                <Component class="javax.swing.JLabel" name="jLabel10">
-                </Component>
-              </SubComponents>
-            </Container>
-          </SubComponents>
         </Container>
       </SubComponents>
     </Container>

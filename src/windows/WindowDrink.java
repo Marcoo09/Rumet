@@ -2,16 +2,13 @@ package windows;
 
 import domain.Drink;
 import domain.Model;
-import java.awt.Color;
 import java.io.IOException;
-import java.util.Arrays;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
-import javax.swing.JPanel;
 
 /**
  * @author Marco Fiorito

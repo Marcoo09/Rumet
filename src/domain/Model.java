@@ -152,4 +152,14 @@ public class Model extends Observable implements Serializable{
         return listOfFilterDrinks;                
     }
 
+    public boolean isAndOrderInThatTable(int number) {
+        boolean returnedValue = false;
+        for(int i = 0 ; i < this.getSortedListOfOrders().size() && !returnedValue; i++){
+            if(this.getSortedListOfOrders().get(i).getTable().getNumber() == number){
+                returnedValue = true;
+            }
+        }
+        return returnedValue;
+    }
+
 }

@@ -1,5 +1,6 @@
 package controller;
 
+import databaseHandler.SqlLiteHandler;
 import domain.Model;
 import java.io.BufferedInputStream;
 import java.io.File;
@@ -26,6 +27,12 @@ public class Rumet {
         testClass.addingInitialApplicationData();
         /*Dummy data*/
         
+        /*Creating or loading database*/        
+        String sUrlString = "jdbc:sqlite:Rumet.db";
+        SqlLiteHandler mydb = new SqlLiteHandler("org.sqlite.JDBC",sUrlString);
+        mydb.createTables();
+        /*Creating or loading database*/
+
         UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
         
         File f1 = new File("Data");
